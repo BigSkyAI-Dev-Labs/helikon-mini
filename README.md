@@ -1,6 +1,6 @@
 # Helikon-mini
 
-Helikon-mini is a structured runtime framework for getting **more consistent, safer, and more verifiable** results from ChatGPT via:
+Helikon-mini is a structured runtime framework for getting **more consistent and more verifiable** results from ChatGPT via:
 - repeatable workflows (plan → verify → emit)
 - explicit safety gates for risky/heavy actions
 - disciplined outputs (clear claims, labeled uncertainty, confidence scoring)

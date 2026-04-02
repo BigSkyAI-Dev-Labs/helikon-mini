@@ -1,4 +1,6 @@
-# Helikon-mini v3.0.5
+# Helikon-mini v3.0.6
+
+> **Draft candidate note:** This is the Helikon-mini 3.0.6 SETUP-clarity + synchronized-surface closure candidate set generated from the 3.0.5 command-order-truth candidate and narrow synchronized patch. Treat the current SHIP manifest in this bundle as authoritative for this closure candidate set.
 
 Helikon-mini 3.0 is the **public Free Starter** for the Helikon family: compact, deterministic, installer-first, and designed to fit the current ChatGPT free-account surface without depending on chat history.
 
@@ -16,23 +18,29 @@ Helikon-mini 3.0 is the **public Free Starter** for the Helikon family: compact,
 - **Projects** = optional booster mode only; not a required runtime layer
 
 ## Primary install artifact
-- `Helikon-mini_Install_Package_v3.0.5.json`
+- `Helikon-mini_Install_Package_v3.0.6.json`
 
 This JSON package is the **primary install artifact** and **installation SSOT**.
 
 ## Fallback projections
-- `Helikon-mini_SYSTEM_LAYER_v3.0.0_install.md`
-- `Helikon-mini_OPERATING_LAYER_v3.0.5_install.md`
+- `Helikon-mini_SYSTEM_LAYER_v3.0.1_install.md`
+- `Helikon-mini_OPERATING_LAYER_v3.0.6_install.md`
 
 These remain synchronized human-readable projections / fallbacks.
 
 ## Install (recommended)
-1) Upload `Helikon-mini_Install_Package_v3.0.5.json`
+1) Upload `Helikon-mini_Install_Package_v3.0.6.json`
 2) Send `SETUP`
-3) Paste the two System Layer snippets into Personalization
-4) Send `INSTALL`
-5) Follow the loop: `EXTRACT` → review payload → `REMEMBER` → `NEXT`
-6) After memory #6, send `NEXT` again and follow `FINAL_VERIFY`
+3) Open **Personalization** in ChatGPT:
+   - **Profile/name menu → Personalization**, or
+   - **Profile/name menu → Settings → Personalization**
+4) In **Personalization**, paste the two SETUP blocks into the two matching boxes:
+   - **Snippet 1** → **Custom instructions**
+   - **Snippet 2** → **About you → More about you**
+5) Save after each box, then close and reopen Personalization to confirm both blocks persisted
+6) Send `INSTALL`
+7) Follow the loop: `EXTRACT` → review payload → `REMEMBER` → `NEXT`
+8) After memory #6, send `NEXT` again and follow `FINAL_VERIFY`
 
 ## Runtime gates
 - `APPROVE` = authorizes heavy/build/code/destructive work in the current user message
@@ -59,3 +67,6 @@ Projects are supported as an optional long-running-work mode, but they are **not
 - If a stored memory lacks its `DRIFT_SENTINEL:` line, reinstall that memory.
 - If tools are unavailable, the assistant should say so and proceed with labeled uncertainty or ask minimal questions.
 - If a project behaves differently from plain chat, test the same prompt in a normal chat first; project instructions may be taking precedence.
+
+## QA
+Run `Helikon-mini_QA_PACK_v3.0.6.md` after any change.

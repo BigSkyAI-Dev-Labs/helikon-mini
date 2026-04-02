@@ -1,7 +1,5 @@
 # Helikon-mini v3.0.5
 
-> **Draft candidate note:** This is the Helikon-mini 3.0.5 command-order-truth + regression-lock-hardening closure candidate set generated from the 3.0.4 exact-parity candidate and narrow synchronized patch. Treat the current SHIP manifest in this bundle as authoritative for this closure candidate set.
-
 Helikon-mini 3.0 is the **public Free Starter** for the Helikon family: compact, deterministic, installer-first, and designed to fit the current ChatGPT free-account surface without depending on chat history.
 
 ## What Helikon-mini is

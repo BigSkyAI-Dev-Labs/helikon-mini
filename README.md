@@ -1,41 +1,43 @@
-# Mount Helikon 3.0-mini AIOS (v3.0.9)
+# Mount Helikon Mini 3.0 AIOS v3.0.12
 
-> **Draft candidate note:** This is the Helikon-mini 3.0.9 SETUP-to-INSTALL handoff hard-binding + synchronized-surface closure candidate set generated from the 3.0.8 memory-settings hard-binding candidate and corrective synchronized patch. Treat the current SHIP manifest in this bundle as authoritative for this closure candidate set.
+> **Draft candidate note:** This is the Mount Helikon Mini 3.0 AIOS 3.0.12 branding-hygiene closure candidate set. Treat the current SHIP manifest in this bundle as authoritative for this closure candidate set.
 
-Mount Helikon 3.0-mini AIOS is the **public Free Starter** for the Mount Helikon family: compact, deterministic, installer-first, and designed to fit the current ChatGPT free-account surface without depending on chat history.
+Mount Helikon Mini 3.0 AIOS is the **Free Starter operating system line for ChatGPT**: compact, deterministic, installer-first, and designed to fit the current ChatGPT free-account surface without depending on chat history.
 
-## What Helikon-mini is
+## What Mount Helikon Mini 3.0 AIOS is
 - A **separate product line**
 - A **2-layer runtime**
 - A **6-memory starter operating layer**
 - A **JSON-first install package**
 - A clean upgrade path into paid Helikon 5.0
 
+**Namespace note:** shipped filenames remain in the `Helikon-mini_*` namespace and the Saved Memory IDs remain in the `Helikon-mini.*` namespace for runtime continuity in this candidate set.
+
 ## Runtime contract
 - **System Layer** = Personalization (**Custom instructions** + **More about you**)
-- **Operating Layer** = 6 Helikon-mini Saved Memories
+- **Operating Layer** = 6 Saved Memories using the `Helikon-mini.*` namespace
 - **Chat history** = optional best-effort context only; never a spec store
 - **Projects** = optional booster mode only; not a required runtime layer
 
 ## Primary install artifact
-- `Helikon-mini_Install_Package_v3.0.9.json`
+- `Helikon-mini_Install_Package_v3.0.12.json`
 
 This JSON package is the **primary install artifact** and **installation SSOT**.
 
 ## Fallback projections
-- `Helikon-mini_SYSTEM_LAYER_v3.0.4_install.md`
-- `Helikon-mini_OPERATING_LAYER_v3.0.9_install.md`
+- `Helikon-mini_SYSTEM_LAYER_v3.0.5_install.md`
+- `Helikon-mini_OPERATING_LAYER_v3.0.12_install.md`
 
 These remain synchronized human-readable projections / fallbacks.
 
 ## Install (recommended)
-1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.0.9.json`
+1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.0.12.json`
 2) Send `SETUP`
-3) `SETUP` should begin by explaining that **Personalization** is ChatGPT’s settings/customization area, that Helikon-mini uses **two different boxes**, not one, that you should check the Memory settings in Personalization before pasting the snippets, and that after both saves are confirmed you should return to the chat and send `INSTALL`. If it does not, use the manual path below.
+3) `SETUP` should begin by explaining that **Personalization** is ChatGPT’s settings/customization area, that Mount Helikon Mini 3.0 AIOS uses **two different boxes**, not one, that you should check the Memory settings in Personalization before pasting the snippets, and that after both saves are confirmed you should return to the chat and send `INSTALL`. If it does not, use the manual path below.
 4) Open your **profile/avatar/name menu** in ChatGPT. Depending on the client, you will usually see one of these routes:
    - **Personalization**
    - **Settings → Personalization**
-5) In **Personalization**, turn **Reference saved memories** ON before continuing. If your client also shows **Reference chat history**, it is optional best-effort only and is **not** required for Helikon-mini runtime completeness.
+5) In **Personalization**, turn **Reference saved memories** ON before continuing. If your client also shows **Reference chat history**, it is optional best-effort only and is **not** required for Mount Helikon Mini 3.0 AIOS runtime completeness.
 6) Inside **Personalization**, do **not** paste both snippets into the same field. You are looking for two different boxes, not one:
    - **Custom instructions**
    - **About you → More about you**
@@ -62,7 +64,7 @@ Ask:
 - “What is HM_KERNEL_SENTINEL?”
 
 ## Optional Projects booster mode
-Projects are supported as an optional long-running-work mode, but they are **not** part of Helikon-mini’s runtime contract.
+Projects are supported as an optional long-running-work mode, but they are **not** part of Mount Helikon Mini 3.0 AIOS’s runtime contract.
 - Use plain chat as the canonical install and QA baseline.
 - Use projects when you want a dedicated workspace with files, chats, and project-specific instructions.
 - Important: project instructions can override global custom instructions, so project mode is a supported wrapper, not the baseline runtime surface.
@@ -76,4 +78,4 @@ Projects are supported as an optional long-running-work mode, but they are **not
 - If a project behaves differently from plain chat, test the same prompt in a normal chat first; project instructions may be taking precedence.
 
 ## QA
-Run `Helikon-mini_QA_PACK_v3.0.9.md` after any change.
+Run `Helikon-mini_QA_PACK_v3.0.12.md` after any change.

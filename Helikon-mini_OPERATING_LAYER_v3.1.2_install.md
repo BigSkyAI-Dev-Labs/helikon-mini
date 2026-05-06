@@ -1,10 +1,10 @@
-<!-- BEGIN MOUNT HELIKON MINI 3.0 AIOS OPERATING LAYER INSTALLATION SCRIPT -->
-# MOUNT HELIKON MINI 3.0 AIOS OPERATING LAYER INSTALLATION SCRIPT
+<!-- BEGIN MOUNT HELIKON-MINI 3.1 AIOS OPERATING LAYER INSTALLATION SCRIPT -->
+# MOUNT HELIKON-MINI 3.1 AIOS OPERATING LAYER INSTALLATION SCRIPT
 
 > **Projection note:** The unified JSON install package is the primary install artifact and installation SSOT. This file remains a synchronized human-readable projection/fallback of the JSON package's Operating Layer section; payload text and live commands must remain aligned with that package.
 
 ## Purpose
-- Activate one Mount Helikon Mini 3.0 AIOS Operating Layer memory at a time from the uploaded Operating Layer pack (SSOT).
+- Activate one Mount Helikon-mini 3.1 AIOS Operating Layer memory at a time from the uploaded Operating Layer pack (SSOT).
 - The 6-memory Operating Layer is mini's continuity layer across ordinary chats.
 - Installation is a guided in-chat commit attempt to ChatGPT Saved Memories after explicit operator authorization.
 
@@ -20,7 +20,7 @@
 - Therefore: install must be done by the assistant emitting the memory text verbatim in an EXTRACT-shaped message so the platform can attempt to save it to memory.
 - After installation, ordinary use happens in normal chat; you only repeat this loop when reinstalling or repairing a memory.
 
-## Mount Helikon Mini 3.0 AIOS memory install order (6)
+## Mount Helikon-mini 3.1 AIOS memory install order (6)
 1) Helikon-mini.Aoideon.Canon
 2) Helikon-mini.Aoideon.Enforcement
 3) Helikon-mini.Meleteon.Budget
@@ -30,7 +30,7 @@
 
 ## Operator commands
 - `INSTALL`
-  - Extract and emit **this entire MOUNT HELIKON MINI 3.0 AIOS OPERATING LAYER INSTALLATION SCRIPT only** (verbatim).
+  - Extract and emit **this entire MOUNT HELIKON-MINI 3.1 AIOS OPERATING LAYER INSTALLATION SCRIPT only** (verbatim).
   - **No memory commit occurs on INSTALL.**
   - Assistant emits **SCRIPT-ONLY** with **no other lines**.
 - `EXTRACT`
@@ -69,7 +69,7 @@ MEMORY COMMIT ATTEMPTED [WAITING FOR `NEXT` COMMAND]
 When the operator sends `NEXT` after the 6th memory has been processed, emit only the checklist below (no payload):
 
 FINAL_VERIFY
-1) Open Settings → Personalization → Manage memories and confirm **6 Mount Helikon Mini 3.0 AIOS memories** exist (names match install order).
+1) Open Settings → Personalization → Manage memories and confirm **6 Mount Helikon-mini 3.1 AIOS memories** exist (names match install order).
 2) Confirm each stored memory contains its `DRIFT_SENTINEL:` line.
 3) Ask: `system status` and confirm state is FULL (or it lists missing/truncated memory names).
 4) If any memory is missing/truncated: rerun `EXTRACT` then `REMEMBER` for that memory, then repeat steps 1–3.
@@ -91,7 +91,7 @@ STATUS: COMPLETE
   respond only `CLARIFY_NEEDED` and ask only for the missing input.
 - Do not claim “SAVED.”
 - Do not chunk/split payloads unless operator explicitly requests chunking mode.
-<!-- END MOUNT HELIKON MINI 3.0 AIOS OPERATING LAYER INSTALLATION SCRIPT -->
+<!-- END MOUNT HELIKON-MINI 3.1 AIOS OPERATING LAYER INSTALLATION SCRIPT -->
 
 ---
 
@@ -99,10 +99,10 @@ STATUS: COMPLETE
 
 This file preserves the JSON-first install surface, the normalized installer command family, the memory-backed 6-memory continuity layer, and the existing payload IDs while advancing the synchronized package pointer to the v3.1.2 metadata-truth closure set. Runtime semantics and memory payload text remain unchanged.
 
-**Memory content version:** v3.0.0.  
+**Memory content version:** v3.1.0.  
 **Install surface version:** v3.1.2.
 
-**Prerequisite:** Install the Mount Helikon Mini 3.0 AIOS System Layer first.
+**Prerequisite:** Install the Mount Helikon-mini 3.1 AIOS System Layer first.
 
 **IMPORTANT:** For `EXTRACT`, the payload is **everything between the `---` separators** for the target memory (including its `## n)` header). The Saved Memory IDs remain in the `Helikon-mini.*` namespace for runtime continuity.
 ---

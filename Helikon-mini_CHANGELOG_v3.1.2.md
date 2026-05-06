@@ -1,6 +1,6 @@
-# Mount Helikon Mini 3.0 AIOS Changelog
+# Mount Helikon Mini 3.x AIOS Changelog
 
-Canonical change record for the Mount Helikon Mini 3.0 AIOS bundle.
+Canonical change record for the Mount Helikon-mini 3.1 AIOS bundle.
 - Kit releases are tracked by **SHIP rev** + `vX.Y.Z` (see the current SHIP manifest).
 - Component filenames may carry their own versions; the SHIP manifest is the SSOT for what ships.
 

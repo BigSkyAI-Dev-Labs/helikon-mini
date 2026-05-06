@@ -1,4 +1,5 @@
-# Mount Helikon-mini 3.0 AIOS v3.1.2
+# Mount Helikon-mini 3.0 AIOS
+(v3.1.2)
 
 Mount Helikon-mini 3.0 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
 

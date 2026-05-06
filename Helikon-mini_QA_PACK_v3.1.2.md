@@ -1,6 +1,7 @@
-# Mount Helikon-mini 3.1 AIOS QA Pack v3.1.2
+# Mount Helikon-mini 3.1 AIOS QA Pack
+(v3.1.2)
 
-Purpose: validate the Mount Helikon-mini 3.1 AIOS (v3.1.2) metadata-truth closure candidate set, preserve product-line separation, and prevent truth/parity drift across the synchronized install surfaces.
+Purpose: validate the Mount Helikon-mini 3.1 AIOS metadata-truth closure candidate set, preserve product-line separation, and prevent truth/parity drift across the synchronized install surfaces.
 
 ---
 

@@ -1,7 +1,7 @@
 # Mount Helikon-mini 3.1 AIOS
 (v3.1.2)
 
-Mount Helikon-mini 3.0 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
+Mount Helikon-mini 3.1 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
 
 ## What you get
 - **Memory-backed continuity** across ordinary chats through a compact 6-memory Operating Layer
@@ -13,7 +13,7 @@ Mount Helikon-mini 3.0 AIOS is the **Free Starter operating system line for Chat
 **Namespace note:** shipped filenames remain in the `Helikon-mini_*` namespace and the Saved Memory IDs remain in the `Helikon-mini.*` namespace for runtime continuity in this candidate set.
 
 ## Why memory matters
-Mount Helikon Mini 3.0 AIOS is intentionally **memory-backed**. The 6 Saved Memories are not an optional extra for the installed edition; they are the Operating Layer that gives mini durable continuity across ordinary chats. The public docs in this release are lighter and more benefit-first, but the runtime still depends on the same two layers:
+Mount Helikon Mini 3.1 AIOS is intentionally **memory-backed**. The 6 Saved Memories are not an optional extra for the installed edition; they are the Operating Layer that gives mini durable continuity across ordinary chats. The public docs in this release are lighter and more benefit-first, but the runtime still depends on the same two layers:
 - **System Layer** = Personalization (**Custom instructions** + **More about you**)
 - **Operating Layer** = 6 Saved Memories using the `Helikon-mini.*` namespace
 

@@ -1,4 +1,5 @@
-# Mount Helikon-mini 3.1 AIOS SHIP Manifest — rev29 (v3.1.2 draft candidate)
+# Mount Helikon-mini 3.1 AIOS SHIP Manifest — rev29
+(v3.1.2 draft candidate)
 
 Date: 2026-04-22
 

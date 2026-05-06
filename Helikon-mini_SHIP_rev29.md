@@ -1,20 +1,20 @@
-# Mount Helikon Mini 3.0 AIOS SHIP Manifest — rev29 (v3.1.2 draft candidate)
+# Mount Helikon-mini 3.1 AIOS SHIP Manifest — rev29 (v3.1.2 draft candidate)
 
 Date: 2026-04-22
 
-This manifest is the SSOT for the Mount Helikon Mini 3.0 AIOS 3.1.2 draft candidate bundle.
+This manifest is the SSOT for the Mount Helikon-mini 3.1 AIOS (v3.1.2) draft candidate bundle.
 
 ## Product separation invariants (non-negotiable)
-- Mount Helikon Mini 3.0 AIOS is a separate product line.
-- Mount Helikon Mini 3.0 AIOS artifacts MUST NOT reference or depend on other Helikon lines' filenames, installer commands, or runtime assumptions.
-- Runtime semantics MUST be fully defined by Mount Helikon Mini 3.0 AIOS installers / install package (no doc-only semantics):
+- Mount Helikon-mini 3.x AIOS is a separate product line.
+- Mount Helikon-mini 3.x AIOS artifacts MUST NOT reference or depend on other Helikon lines' filenames, installer commands, or runtime assumptions.
+- Runtime semantics MUST be fully defined by Mount Helikon-mini 3.x AIOS installers / install package (no doc-only semantics):
   - Unified JSON install package
   - System Layer installer projection
   - Operating Layer installer projection
 - Shipped filenames remain in the `Helikon-mini_*` namespace and the Saved Memory IDs remain in the `Helikon-mini.*` namespace for runtime continuity in this candidate set.
 
 ## Versioning rules (shipping discipline)
-- Mount Helikon Mini 3.0 AIOS major versions are independent of Helikon (core) major versions.
+- Mount Helikon-mini 3.x AIOS major versions are independent of Helikon (core) major versions.
 - **Kit (bundle) version** is the `vX.Y.Z` in this SHIP header; **revN** increments on any shipped-file change (add/remove/content).
 - Shipped components may carry their own versions in filenames; **do not assume** all component filenames match the kit version.
 - **Bump rules (minimal churn):**

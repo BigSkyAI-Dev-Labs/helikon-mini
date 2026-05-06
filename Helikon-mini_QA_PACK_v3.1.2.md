@@ -1,6 +1,6 @@
-# Mount Helikon Mini 3.0 AIOS QA Pack v3.1.2
+# Mount Helikon-mini 3.1 AIOS QA Pack v3.1.2
 
-Purpose: validate the Mount Helikon Mini 3.0 AIOS 3.1.2 metadata-truth closure candidate set, preserve product-line separation, and prevent truth/parity drift across the synchronized install surfaces.
+Purpose: validate the Mount Helikon-mini 3.1 AIOS (v3.1.2) metadata-truth closure candidate set, preserve product-line separation, and prevent truth/parity drift across the synchronized install surfaces.
 
 ---
 
@@ -20,7 +20,7 @@ Pass condition: exactly 8 files, names match SHIP.
 ---
 
 ## B) Separation and authority lock (must pass)
-Goal: Mount Helikon Mini 3.0 AIOS remains self-defining even when Helikon 5.0 donor/reference files are present in the workspace.
+Goal: Mount Helikon-mini 3.1 AIOS remains self-defining even when Helikon 5.0 donor/reference files are present in the workspace.
 
 Checks:
 1) Search active mini docs for filenames that do not begin with `Helikon-mini_`, excluding explicitly historical mentions in changelog/SHIP.

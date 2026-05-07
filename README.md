@@ -2,6 +2,15 @@
 
 Release: v3.2.0 / rev31 draft candidate.
 
+<p align="center">
+  <img alt="Mount Helikon-mini 3.2 AIOS" src="https://img.shields.io/badge/Mount%20Helikon--mini-3.2%20AIOS-blue">
+  <img alt="Line: Free Starter" src="https://img.shields.io/badge/line-Free%20Starter-2ea44f">
+  <img alt="Status: draft candidate" src="https://img.shields.io/badge/status-draft%20candidate-orange">
+  <img alt="Runtime: 2 layers, 6 memories" src="https://img.shields.io/badge/runtime-2%20layers%20%7C%206%20memories-purple">
+  <img alt="Install: JSON SSOT" src="https://img.shields.io/badge/install-JSON%20SSOT-informational">
+  <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
+</p>
+
 Mount Helikon-mini 3.2 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
 
 ## What you get

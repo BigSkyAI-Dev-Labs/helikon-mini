@@ -11,6 +11,10 @@ Release: v3.2.0 / rev31 draft candidate.
   <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green">
 </p>
 
+**Start here:** [🚀 Quickstart](#quickstart-recommended) · [🧠 Why memory matters](#why-memory-matters) · [🧩 Runtime contract](#runtime-contract) · [🛠️ Troubleshooting](#troubleshooting) · [✅ QA](#qa)
+
+> **In one sentence:** Mount Helikon-mini gives ChatGPT a small memory-backed operating posture: clearer planning, safer action gates, honest uncertainty, and continuity across ordinary chats.
+
 Mount Helikon-mini 3.2 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
 
 ## What you get

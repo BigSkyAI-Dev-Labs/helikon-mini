@@ -18,11 +18,12 @@ Release: v3.2.0 / rev31 draft candidate.
 Mount Helikon-mini 3.2 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
 
 ## What you get
-- **Memory-backed continuity** across ordinary chats through a compact 6-memory Operating Layer
-- **Clearer workflow discipline** through plan → verify → emit, explicit uncertainty, and visible action gates
-- **Honest degradation** when tools, memories, or current facts are missing or uncertain
-- **A small install surface** with a single JSON install package as the primary install artifact and installation SSOT
-- **A clean upgrade path** into paid Mount Helikon 5.0 AI Assistant without turning Helikon 5.0 into mini runtime authority
+
+- 🧠 **Memory-backed continuity** across ordinary chats through a compact 6-memory Operating Layer
+- 🧭 **Clearer workflow discipline** through plan → verify → emit, explicit uncertainty, and visible action gates
+- ⚠️ **Honest degradation** when tools, memories, or current facts are missing or uncertain
+- 📦 **A small install surface** with a single JSON install package as the primary install artifact and installation SSOT
+- ⛰️ **A clean upgrade path** into paid Mount Helikon 5.0 AI Assistant without turning Helikon 5.0 into mini runtime authority
 
 **Namespace note:** shipped filenames remain in the `Helikon-mini_*` namespace and the Saved Memory IDs remain in the `Helikon-mini.*` namespace for runtime continuity in this candidate set.
 

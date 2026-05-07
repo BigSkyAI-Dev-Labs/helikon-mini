@@ -2,7 +2,7 @@
 
 Release: v3.2.0 / rev31 draft candidate.
 
-<p align="center">
+<p align="left">
   <img alt="Mount Helikon-mini 3.2 AIOS" src="https://img.shields.io/badge/Mount%20Helikon--mini-3.2%20AIOS-blue">
   <img alt="Line: Free Starter" src="https://img.shields.io/badge/line-Free%20Starter-2ea44f">
   <img alt="Status: draft candidate" src="https://img.shields.io/badge/status-draft%20candidate-orange">

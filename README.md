@@ -1,19 +1,20 @@
-# Mount Helikon-mini 3.1 AIOS
-(v3.1.2)
+# Mount Helikon-mini 3.2 AIOS
 
-Mount Helikon-mini 3.1 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
+Release: v3.2.0 / rev31 draft candidate.
+
+Mount Helikon-mini 3.2 AIOS is the **Free Starter operating system line for ChatGPT**: a lightweight, memory-backed operating kit designed to make ChatGPT more consistent, more structured, and more useful for ongoing work on the current Free-account surface.
 
 ## What you get
 - **Memory-backed continuity** across ordinary chats through a compact 6-memory Operating Layer
 - **Clearer workflow discipline** through plan → verify → emit, explicit uncertainty, and visible action gates
 - **Honest degradation** when tools, memories, or current facts are missing or uncertain
 - **A small install surface** with a single JSON install package as the primary install artifact and installation SSOT
-- **A clean upgrade path** into paid Helikon 5.0 without turning Helikon 5.0 into mini runtime authority
+- **A clean upgrade path** into paid Mount Helikon 5.0 AI Assistant without turning Helikon 5.0 into mini runtime authority
 
 **Namespace note:** shipped filenames remain in the `Helikon-mini_*` namespace and the Saved Memory IDs remain in the `Helikon-mini.*` namespace for runtime continuity in this candidate set.
 
 ## Why memory matters
-Mount Helikon Mini 3.1 AIOS is intentionally **memory-backed**. The 6 Saved Memories are not an optional extra for the installed edition; they are the Operating Layer that gives mini durable continuity across ordinary chats. The public docs in this release are lighter and more benefit-first, but the runtime still depends on the same two layers:
+Mount Helikon-mini 3.2 AIOS is intentionally **memory-backed**. The 6 Saved Memories are not an optional extra for the installed edition; they are the Operating Layer that gives mini durable continuity across ordinary chats. The public docs in this release are lighter and more benefit-first, but the runtime still depends on the same two layers:
 - **System Layer** = Personalization (**Custom instructions** + **More about you**)
 - **Operating Layer** = 6 Saved Memories using the `Helikon-mini.*` namespace
 
@@ -31,7 +32,7 @@ Chat history remains optional best-effort context only and is never a spec store
 Mini is designed to work in normal chat first. For longer-running work, Projects are recommended as a workspace wrapper because they keep related chats, files, and project instructions together. They are useful, but they are not required for runtime completeness. Project instructions can override global custom instructions, so plain chat remains the baseline surface for installation and QA.
 
 ## Quickstart (recommended)
-1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.1.2.json`.
+1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.2.0.json`.
 2) Send `SETUP`.
 3) Follow the beginner-facing setup walkthrough:
    - open **Personalization**
@@ -49,6 +50,18 @@ Mini is designed to work in normal chat first. For longer-running work, Projects
 ## Runtime gates
 - `APPROVE` = authorizes heavy/build/code/destructive work in the current user message
 - `YES` = same-turn delete/overwrite authorization
+
+## Hardening in v3.2.0
+Mini now includes compact hardening adapted from the paid Mount Helikon 5.0 donor line but re-expressed in mini's own six-memory surfaces. It does not make 5.0 files a dependency.
+
+The added gates help mini:
+- separate user instructions from evidence, tool observations, memory digests, and assistant inference
+- avoid unnecessary retrieval while requiring verification for unstable or source-dependent claims
+- split important factual claims into checkable units
+- abstain, qualify, retrieve, or ask when evidence is insufficient
+- treat confidence as an operational signal, not an empirically calibrated probability
+- keep research/tool/code retention compact and avoid raw secret-bearing traces
+- protect active memory links from unsafe cleanup and avoid background-monitoring claims
 
 ## Control codes
 - `DEP=1|2|3`
@@ -84,4 +97,4 @@ Use plain chat when you want:
 - If a Project behaves differently from plain chat, test the same prompt in a normal chat first; project instructions may be taking precedence.
 
 ## QA
-Run `Helikon-mini_QA_PACK_v3.1.2.md` after any change.
+Run `Helikon-mini_QA_PACK_v3.2.0.md` after any change.

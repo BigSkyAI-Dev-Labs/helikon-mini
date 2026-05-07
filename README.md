@@ -50,7 +50,7 @@ Chat history remains optional best-effort context only and is never a spec store
 Mini is designed to work in normal chat first. For longer-running work, Projects are recommended as a workspace wrapper because they keep related chats, files, and project instructions together. They are useful, but they are not required for runtime completeness. Project instructions can override global custom instructions, so plain chat remains the baseline surface for installation and QA.
 
 ## Quickstart (recommended)
-1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.2.0.json`.
+1) 1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.2.0.json`. Optionally, you may use the experimental [Helikon-mini Installer GPT](https://chatgpt.com/g/g-69d51a8857788191a30c98300c4d236e-helikon-mini-installer) as a guided helper, but the JSON package remains authoritative.
 2) Send `SETUP`.
 3) Follow the beginner-facing setup walkthrough:
    - open **Personalization**
@@ -61,6 +61,21 @@ Mini is designed to work in normal chat first. For longer-running work, Projects
 4) Return to the chat and send `INSTALL`.
 5) Follow the Operating Layer loop: `EXTRACT` → review payload → `REMEMBER` → `NEXT`.
 6) After memory #6, send `NEXT` again and follow `FINAL_VERIFY`.
+
+## Optional experimental installer GPT
+You can also try the experimental Custom GPT installer:
+[Helikon-mini Installer](https://chatgpt.com/g/g-69d51a8857788191a30c98300c4d236e-helikon-mini-installer)
+
+This GPT is an optional convenience tool for guided setup. It does not replace the official install package, and it is not the installation source of truth.
+
+For authoritative installation, use:
+- `Helikon-mini_Install_Package_v3.2.0.json`
+- `SETUP`
+- `INSTALL`
+- `EXTRACT` → `REMEMBER` → `NEXT`
+- `FINAL_VERIFY`
+
+If the Custom GPT output conflicts with the JSON package, System Layer projection, Operating Layer projection, SHIP manifest, or QA Pack, the shipped Helikon-mini files govern.
 
 ## Setup posture
 `SETUP` should begin by explaining, in plain language, that **Personalization** is ChatGPT's settings/customization area, that mini uses **two different text boxes**, not one, and that **Reference saved memories** must be ON before you continue. If `SETUP` does not do that, use the System Layer projection file directly and then return to the chat for `INSTALL`.

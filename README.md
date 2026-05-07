@@ -33,6 +33,14 @@ Mount Helikon-mini 3.2 AIOS is intentionally **memory-backed**. The 6 Saved Memo
 
 Chat history remains optional best-effort context only and is never a spec store.
 
+## How mini works
+
+| Layer | Lives in | Purpose |
+|---|---|---|
+| **System Layer** | Personalization | Compact account-level behavior, gates, and setup posture |
+| **Operating Layer** | 6 Saved Memories | Memory-backed continuity across ordinary chats |
+| **Projects** | Optional workspace wrapper | Useful for long-running work, but not required for runtime completeness |
+
 ## Runtime contract
 - **Two layers only**: Personalization + Saved Memories
 - **System Layer** = Personalization (**Custom instructions** + **More about you**)

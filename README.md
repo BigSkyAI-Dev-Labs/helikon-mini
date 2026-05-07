@@ -50,7 +50,7 @@ Chat history remains optional best-effort context only and is never a spec store
 Mini is designed to work in normal chat first. For longer-running work, Projects are recommended as a workspace wrapper because they keep related chats, files, and project instructions together. They are useful, but they are not required for runtime completeness. Project instructions can override global custom instructions, so plain chat remains the baseline surface for installation and QA.
 
 ## Quickstart (recommended)
-1) 1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.2.0.json`. Optionally, you may use the experimental [Helikon-mini Installer GPT](https://chatgpt.com/g/g-69d51a8857788191a30c98300c4d236e-helikon-mini-installer) as a guided helper, but the JSON package remains authoritative.
+1) In a normal **non-Temporary chat**, upload `Helikon-mini_Install_Package_v3.2.0.json`. Optionally, you may use the experimental [Helikon-mini Installer GPT](https://chatgpt.com/g/g-69d51a8857788191a30c98300c4d236e-helikon-mini-installer) as a guided helper, but the JSON package remains authoritative.
 2) Send `SETUP`.
 3) Follow the beginner-facing setup walkthrough:
    - open **Personalization**

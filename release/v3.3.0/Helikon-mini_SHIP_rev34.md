@@ -1,13 +1,14 @@
-# Mount Helikon-mini 3.3 AIOS SHIP Manifest — rev33
+# Mount Helikon-mini 3.3 AIOS SHIP Manifest — rev34
 
 **Release:** v3.3.0  
-**Status:** draft candidate / RC2  
+**Status:** release
+
 **Observation date:** 2026-09-04  
 **Source baseline:** `FixicoAI-DevLabs/mount-helikon-mini-aios@702b6fbdf34ebf54f455075525818fff7962edb9`
 
 ## Authority
 
-This manifest is authoritative for the v3.3.0 shipped set. The JSON package is authoritative for installation semantics. Candidate contents cannot activate themselves or redefine installed runtime state.
+This manifest is authoritative for the v3.3.0 shipped set. The JSON package is authoritative for installation semantics. Release contents cannot activate themselves or redefine installed runtime state.
 
 ## Product invariants
 
@@ -16,7 +17,7 @@ This manifest is authoritative for the v3.3.0 shipped set. The JSON package is a
 - Stable record IDs: exactly the six `Helikon-mini.*` names declared in the JSON package.
 - Chat history and Projects are optional context/workspace surfaces, not runtime layers.
 - Host QA labels are non-runtime classifications.
-- Status remains `draft_candidate` pending separately authorized live host QA.
+- Artifact status is `release`; live-host installation and behavioral QA remain unexecuted and must not be inferred from static validation.
 
 ## Shipped files — exact count 8
 
@@ -28,7 +29,7 @@ This manifest is authoritative for the v3.3.0 shipped set. The JSON package is a
 | 4 | `Helikon-mini_QA_PACK_v3.3.0.md` | Static and live QA contract |
 | 5 | `Helikon-mini_README_v3.3.0.md` | Canonical release documentation |
 | 6 | `Helikon-mini_CHANGELOG_v3.3.0.md` | Version history and migration record |
-| 7 | `Helikon-mini_SHIP_rev33.md` | Authoritative shipped-set manifest |
+| 7 | `Helikon-mini_SHIP_rev34.md` | Authoritative shipped-set manifest |
 | 8 | `Helikon-mini_LICENSE.md` | MIT license |
 
 No directory prefix is used inside the distribution ZIP. No ninth file is permitted.
@@ -47,4 +48,4 @@ Deterministic validators, source snapshots, RUNSHEETs, receipts, logs, detached 
 
 ## Revision note
 
-rev33 is the RC2 compatibility correction to the v3.3.0 host-compatibility and packaging release. It restores legacy JSON field names/types, separates the Saved Memory availability policy from the legacy Boolean prerequisite, and restores the independently versioned `HMK-3.0.0-REV1` kernel sentinel. It preserves RC1's two-layer runtime, six stable memory IDs, exact payload behavior, host-memory truth boundary, command family, modes, verdicts, action gates, and MIT posture. rev32 remains preserved as the superseded RC1 source candidate.
+rev34 is the final v3.3.0 release identity. It promotes the validated compatibility correction without changing runtime semantics, advances the revision because final release bytes differ from rev33, and preserves the two-layer runtime, six stable memory IDs, exact payload behavior, host-memory truth boundary, command family, modes, verdicts, action gates, and MIT posture. rev32 and rev33 remain preserved in repository history as candidate provenance.

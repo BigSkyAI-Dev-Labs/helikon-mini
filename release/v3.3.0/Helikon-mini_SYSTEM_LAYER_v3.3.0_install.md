@@ -2,7 +2,7 @@
 
 > **Authority:** `Helikon-mini_Install_Package_v3.3.0.json` is the primary install artifact and installation SSOT. This file is a synchronized human-readable projection/fallback.
 
-> **RC2 compatibility note:** The JSON package retains the legacy setup/UI field names and types as deprecated-compatible surfaces while keeping the label-based host guidance. The kernel sentinel remains independently versioned at `HMK-3.0.0-REV1`.
+> **v3.3 compatibility note:** The JSON package retains the legacy setup/UI field names and types as deprecated-compatible surfaces while keeping the label-based host guidance. The kernel sentinel remains independently versioned at `HMK-3.0.0-REV1`.
 
 ## Runtime contract
 

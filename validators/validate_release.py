@@ -19,7 +19,7 @@ FILES = [
     "Helikon-mini_QA_PACK_v3.3.0.md",
     "Helikon-mini_README_v3.3.0.md",
     "Helikon-mini_CHANGELOG_v3.3.0.md",
-    "Helikon-mini_SHIP_rev33.md",
+    "Helikon-mini_SHIP_rev34.md",
     "Helikon-mini_LICENSE.md",
 ]
 MEMORIES = [
@@ -149,7 +149,7 @@ def main() -> int:
     release = args.release_dir
     observed = sorted(p.name for p in release.iterdir())
     regular = all((release / name).is_file() and not (release / name).is_symlink() for name in observed)
-    checks.add("RG-01", True, "Authoritative target is v3.3.0 RC2 draft_candidate with SHIP rev33.")
+    checks.add("RG-01", True, "Authoritative target is release v3.3.0 with SHIP rev34.")
     checks.add("RG-02", observed == sorted(FILES), f"Observed exact release inventory: {observed}")
     checks.add("RG-04", observed == sorted(FILES) and regular, "Exactly eight expected regular files are present.")
     checks.add("INVENTORY-CASEFOLD", len({name.casefold() for name in observed}) == len(observed), "No case-fold filename collisions.")
@@ -186,9 +186,10 @@ def main() -> int:
         and package.get("schema_version") == "1.1.0"
         and package.get("package_version") == "3.3.0"
         and package.get("system_name") == "Mount Helikon-mini 3.3 AIOS"
-        and package.get("status") == "draft_candidate"
+        and package.get("status") == "release"
+        and package.get("meta", {}).get("release_revision") == "rev34"
     )
-    checks.add("RG-05", identity_ok, "Schema, filename-era version, system identity, and candidate status were checked.")
+    checks.add("RG-05", identity_ok, "Schema, filename-era version, system identity, and release status were checked.")
     expected_counts = package.get("integrity", {}).get("expected_counts", {})
     checks.add(
         "COUNT-CONTRACT",
@@ -213,7 +214,7 @@ def main() -> int:
     checks.note("RG-09", "not-applicable", "Full Helikon twelve-owner parity is not a mini shipped-record gate.", "Mini COVERS labels are compression/provenance labels.")
 
     shipped = package.get("ship_sync", {}).get("shipped_files")
-    pointers_ok = shipped == FILES and package.get("ship_sync", {}).get("current_manifest") == FILES[6] and package.get("ship_sync", {}).get("current_manifest_rev") == "rev33"
+    pointers_ok = shipped == FILES and package.get("ship_sync", {}).get("current_manifest") == FILES[6] and package.get("ship_sync", {}).get("current_manifest_rev") == "rev34"
     pointers_ok = pointers_ok and package.get("system_layer", {}).get("installer_filename_legacy_projection") == FILES[1]
     pointers_ok = pointers_ok and package.get("operating_layer", {}).get("installer_filename_legacy_projection") == FILES[2]
     checks.add("RG-06", pointers_ok, "SHIP, System projection, Operating projection, manifest revision, and JSON filename pointers agree.")
@@ -288,7 +289,7 @@ def main() -> int:
     prereqs = protocols.get("shared_prereqs", {})
     prereq_compat = type(prereqs.get("reference_saved_memories")) is bool and prereqs.get("reference_saved_memories") is True
     prereq_compat = prereq_compat and prereqs.get("reference_saved_memories_policy") == "required_if_available"
-    checks.add("RC2-PREREQ-COMPAT", prereq_compat, "Legacy Saved Memory prerequisite remains Boolean true; host availability policy is a separate string field.")
+    checks.add("COMPAT-PREREQ", prereq_compat, "Legacy Saved Memory prerequisite remains Boolean true; host availability policy is a separate string field.")
 
     ui = package.get("system_layer", {}).get("ui_route_guidance", {})
     setup = package.get("system_layer", {}).get("setup_output_contract", {})
@@ -318,7 +319,7 @@ def main() -> int:
     }
     legacy_types_ok = all(type(ui.get(key)) is expected for key, expected in ui_legacy_types.items())
     legacy_types_ok = legacy_types_ok and all(type(setup.get(key)) is expected for key, expected in setup_legacy_types.items())
-    checks.add("RC2-LEGACY-FIELDS", legacy_types_ok, "All named legacy UI/setup JSON fields are present with their v3.2 types.")
+    checks.add("COMPAT-LEGACY-FIELDS", legacy_types_ok, "All named legacy UI/setup JSON fields are present with their v3.2 types.")
 
     additive_types = {
         "ui.route_rule": type(ui.get("route_rule")) is str,
@@ -333,18 +334,18 @@ def main() -> int:
     }
     compat_contract = package.get("backward_compatibility_contract", {})
     additive_ok = all(additive_types.values()) and compat_contract.get("classification_is_non_runtime") is True
-    checks.add("RC2-ADDITIVE-FIELDS", additive_ok, "RC1 host-aware fields remain present and the compatibility contract is explicitly non-runtime.")
+    checks.add("COMPAT-ADDITIVE-FIELDS", additive_ok, "Host-aware fields remain present and the compatibility contract is explicitly non-runtime.")
 
     flow = package.get("system_layer", {}).get("operator_flow", [])
-    checks.add("RC2-OPERATOR-FLOW", isinstance(flow, list) and len(flow) == 10, "System operator_flow contains the restored ten-step compatible sequence.")
+    checks.add("COMPAT-OPERATOR-FLOW", isinstance(flow, list) and len(flow) == 10, "System operator_flow contains the restored ten-step compatible sequence.")
     sentinel_ok = sys_payloads.get("custom_instructions", "").count("HM_KERNEL_SENTINEL: HMK-3.0.0-REV1") == 1
     sentinel_ok = sentinel_ok and "HM_KERNEL_SENTINEL: HMK-3.3.0-REV1" not in sys_payloads.get("custom_instructions", "")
     sentinel_ok = sentinel_ok and "HM_KERNEL_SENTINEL: HMK-3.0.0-REV1" in system_md
-    checks.add("RC2-KERNEL-SENTINEL", sentinel_ok, "Active JSON and System projection use only the independently versioned HMK-3.0.0-REV1 kernel sentinel.")
+    checks.add("COMPAT-KERNEL-SENTINEL", sentinel_ok, "Active JSON and System projection use only the independently versioned HMK-3.0.0-REV1 kernel sentinel.")
     qa_text = text_files.get(FILES[3], "")
     qa_paths_ok = "--source-dir source-rc1/v3.3.0 --provenance governance/RC1_SOURCE_PROVENANCE.json" in qa_text
     qa_paths_ok = qa_paths_ok and "SOURCE_PROVENANCE_v3.2.0.json" not in qa_text and "--source-dir source-v3.2.0" not in qa_text
-    checks.add("RC2-QA-PROCEDURE", qa_paths_ok, "Shipped QA commands point to the RC2 engineering packet's RC1 snapshot and provenance manifest.")
+    checks.add("COMPAT-QA-PROCEDURE", qa_paths_ok, "Shipped QA commands point to the preserved RC1 snapshot and provenance manifest.")
 
     if args.source_dir:
         source_package = json.loads((args.source_dir / "Helikon-mini_Install_Package_v3.3.0.json").read_text(encoding="utf-8"))
@@ -365,9 +366,9 @@ def main() -> int:
 
     report = {
         "schema": "helikon-mini-static-validation-v1",
-        "candidate": "3.3.0-rc2-rev33",
+        "release": "3.3.0-rev34",
         "status": "pass" if checks.passed else "fail",
-        "release_readiness": "provisional_live_qa_pending" if checks.passed else "blocked",
+        "release_readiness": "released_static_qa_complete" if checks.passed else "blocked",
         "release_dir": str(release),
         "zip": str(args.zip_path) if args.zip_path else None,
         "checks": checks.items,

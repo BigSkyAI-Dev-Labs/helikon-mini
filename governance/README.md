@@ -10,16 +10,16 @@ Future public receipts should prefer repository-relative paths. When an external
 
 ## Interpreting `dist/` references
 
-The `dist/` paths mentioned in historical receipts identify local, reproducible validation outputs. RC2 binary archives and the live-host QA operator kit were deliberately kept out of Git and were not published as GitHub Release assets. CI builds them under its temporary runner directory, validates them, and discards them after the run.
+The `dist/` paths mentioned in historical receipts identify local, reproducible validation outputs. RC2 binary archives and the live-host QA operator kit were deliberately kept out of Git and were not published as GitHub Release assets. Current CI builds the final v3.3.0 archive under its temporary runner directory, validates it, and discards it after the run.
 
-The source candidate remains in `release/v3.3.0/`. The immutable comparison baseline remains in `source-rc1/v3.3.0/`.
+The final release family is in `release/v3.3.0/`. The immutable comparison baseline remains in `source-rc1/v3.3.0/`, and the byte-preserved previous release is in `release/v3.2.0/`.
 
 ## Repository checksum scope
 
-`checksums/Helikon-mini_3.3.0_RC2_REPOSITORY_SHA256SUMS.txt` covers the 35 payload files introduced with the RC2 source integration. The manifest does not hash itself. Later repository-support files, including this guide, the root README notice, the GitHub Actions workflow, and the post-merge integration receipt, are intentionally outside that historical manifest's scope.
+`checksums/Helikon-mini_3.3.0_RC2_REPOSITORY_SHA256SUMS.txt` is historical evidence covering the 35 payload files introduced with the RC2 source integration. `checksums/Helikon-mini_3.3.0_REPOSITORY_SHA256SUMS.txt` is the current final-release manifest used by CI and does not hash itself.
 
-The checksum manifest must remain unchanged unless the governed RC2 payload itself changes. A future release line should create a new manifest rather than silently expanding this one.
+Historical checksum manifests remain unchanged. A future release line should create a new manifest rather than silently rewriting an earlier release record.
 
 ## Authority boundary
 
-The release candidate's runtime contract remains the two-layer Helikon-mini design documented by the release files. Provenance records, CI configuration, receipts, local paths, and generated archives are evidence about the candidate; none of them is a third runtime layer or a source of installation authority.
+The release runtime contract remains the two-layer Helikon-mini design documented by the release files. Provenance records, CI configuration, receipts, local paths, and generated archives are evidence about the release; none of them is a third runtime layer or a source of installation authority.

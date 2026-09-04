@@ -2,6 +2,16 @@
 
 This changelog tracks the independently versioned free/open-source mini line. Full Mount Helikon versions are compatibility references only and do not determine mini's version.
 
+## v3.3.0 — rev34 release (2026-09-04)
+
+- Promotes the validated v3.3.0 candidate into the final public release without changing the two-layer runtime or six-memory Operating Layer.
+- Advances SHIP identity from rev33 to rev34 so final release bytes do not reuse candidate identity.
+- Replaces current candidate lifecycle labels and pointers with final release metadata.
+- Moves the six v3.2.0 artifacts from the repository root to `release/v3.2.0/` without changing their bytes.
+- Adds final deterministic archive and checksum procedures, release-oriented CI, and a tagged GitHub Release path.
+- Preserves the RC1 and RC2 entries below as historical provenance.
+- Live-host installation and behavioral QA remain unexecuted and must not be inferred from static release validation.
+
 ## v3.3.0 — rev33 draft candidate / RC2 (2026-09-04)
 
 - Restores `install_package_protocols.shared_prereqs.reference_saved_memories` to Boolean `true` for backward-compatible consumers.

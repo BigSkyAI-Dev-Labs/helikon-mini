@@ -1,10 +1,10 @@
-# Mount Helikon-mini 3.3 AIOS QA Pack (v3.3.0 RC2 / rev33)
+# Mount Helikon-mini 3.3 AIOS QA Pack (v3.3.0 / rev34)
 
 This QA pack separates deterministic artifact evidence from live ChatGPT host evidence. Passing static QA does not prove that ChatGPT stored six payloads verbatim, that a particular UI is present, or that the runtime is active.
 
 ## A. Authority and scope gates
 
-- [ ] The authoritative target is `v3.3.0 draft_candidate`, SHIP `rev33`.
+- [ ] The authoritative target is release `v3.3.0`, SHIP `rev34`.
 - [ ] The build source is commit `702b6fbdf34ebf54f455075525818fff7962edb9` and its local snapshot matches Git blob SHAs.
 - [ ] The JSON package is the installation SSOT; System and Operating Markdown files are projections/fallbacks.
 - [ ] The runtime has exactly two layers. Files, QA classifications, Projects, chat history, plugins, Skills, tools, models, and installer GPTs are not runtime authority.
@@ -19,14 +19,14 @@ The release directory and distribution ZIP must contain exactly:
 4. `Helikon-mini_QA_PACK_v3.3.0.md`
 5. `Helikon-mini_README_v3.3.0.md`
 6. `Helikon-mini_CHANGELOG_v3.3.0.md`
-7. `Helikon-mini_SHIP_rev33.md`
+7. `Helikon-mini_SHIP_rev34.md`
 8. `Helikon-mini_LICENSE.md`
 
 Reject missing, duplicate, unexpected, absolute, traversal, case-fold-colliding, or symbolic-link paths.
 
 ## C. JSON and integrity gates
 
-- [ ] UTF-8 JSON parses and declares schema `helikon_mini.install_package`, schema version `1.1.0`, package version `3.3.0`, and status `draft_candidate`.
+- [ ] UTF-8 JSON parses and declares schema `helikon_mini.install_package`, schema version `1.1.0`, package version `3.3.0`, and status `release`.
 - [ ] Expected counts are 2 runtime layers, 2 System payloads, 6 memories, 2 entrypoints, 5 live commands, and 8 shipped files.
 - [ ] Every embedded payload SHA-256 and character count matches its exact UTF-8 text.
 - [ ] Every non-self file in `ship_sync.source_file_inventory` matches filename, byte count, and SHA-256.
@@ -87,14 +87,14 @@ From the engineering packet root:
 
 ```bash
 python3 validators/validate_release.py --release-dir release/v3.3.0 --source-dir source-rc1/v3.3.0 --provenance governance/RC1_SOURCE_PROVENANCE.json
-python3 validators/build_deterministic_zip.py --release-dir release/v3.3.0 --output dist/Helikon-mini_3.3.0_RC2_draft_candidate.zip
-python3 validators/validate_release.py --release-dir release/v3.3.0 --zip dist/Helikon-mini_3.3.0_RC2_draft_candidate.zip --source-dir source-rc1/v3.3.0 --provenance governance/RC1_SOURCE_PROVENANCE.json
+python3 validators/build_deterministic_zip.py --release-dir release/v3.3.0 --output dist/Helikon-mini_3.3.0.zip
+python3 validators/validate_release.py --release-dir release/v3.3.0 --zip dist/Helikon-mini_3.3.0.zip --source-dir source-rc1/v3.3.0 --provenance governance/RC1_SOURCE_PROVENANCE.json
 ```
 
 A second build to a distinct path must produce the same ZIP SHA-256.
 
 
-## K. RC2 backward-compatibility gates
+## K. Backward-compatibility gates
 
 - [ ] `shared_prereqs.reference_saved_memories` remains JSON Boolean `true`.
 - [ ] `shared_prereqs.reference_saved_memories_policy` separately equals `required_if_available`.
@@ -105,7 +105,7 @@ A second build to a distinct path must produce the same ZIP SHA-256.
 - [ ] `HM_KERNEL_SENTINEL` is exactly `HMK-3.0.0-REV1` in JSON and the System Markdown projection.
 - [ ] Memory payload IDs, memory sentinels, Operating installer, commands, modes, verdicts, and host-memory truth rules remain unchanged from RC1.
 
-## L. Live host tests — deferred in RC2
+## L. Live host tests — not executed for this release
 
 These require separate authorization and are not satisfied by static QA:
 
@@ -115,4 +115,4 @@ These require separate authorization and are not satisfied by static QA:
 - Ordinary-chat and optional Project behavior after installation.
 - Upgrade, deduplication, and rollback behavior from an installed v3.2 system.
 
-Until those tests are observed, release readiness is **provisional** even when all static gates pass.
+Until those tests are observed, do not claim live-host persistence, exact memory retention, or runtime activation. This limitation does not invalidate the deterministic artifact release.

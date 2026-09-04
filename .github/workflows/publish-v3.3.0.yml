@@ -1,0 +1,89 @@
+name: Publish Helikon-mini v3.3.0
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-helikon-mini-v3.3.0
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: contains(github.event.head_commit.message, '[publish-v3.3.0]')
+    name: Create tag, Release, and validated assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Verify repository checksums
+        run: sha256sum -c checksums/Helikon-mini_3.3.0_REPOSITORY_SHA256SUMS.txt
+
+      - name: Build and validate release assets
+        run: |
+          asset_dir="$RUNNER_TEMP/release-assets"
+          mkdir "$asset_dir"
+          python3 validators/build_deterministic_zip.py \
+            --release-dir release/v3.3.0 \
+            --output "$asset_dir/Helikon-mini_3.3.0.zip"
+          python3 validators/validate_release.py \
+            --release-dir release/v3.3.0 \
+            --zip "$asset_dir/Helikon-mini_3.3.0.zip" \
+            --source-dir source-rc1/v3.3.0 \
+            --provenance governance/RC1_SOURCE_PROVENANCE.json
+          unzip -q "$asset_dir/Helikon-mini_3.3.0.zip" -d "$asset_dir"
+          cd "$asset_dir"
+          sha256sum \
+            Helikon-mini_3.3.0.zip \
+            Helikon-mini_Install_Package_v3.3.0.json \
+            Helikon-mini_SYSTEM_LAYER_v3.3.0_install.md \
+            Helikon-mini_OPERATING_LAYER_v3.3.0_install.md \
+            Helikon-mini_QA_PACK_v3.3.0.md \
+            Helikon-mini_README_v3.3.0.md \
+            Helikon-mini_CHANGELOG_v3.3.0.md \
+            Helikon-mini_SHIP_rev34.md \
+            Helikon-mini_LICENSE.md \
+            > Helikon-mini_3.3.0_SHA256SUMS.txt
+          sha256sum -c Helikon-mini_3.3.0_SHA256SUMS.txt
+          test "$(sha256sum Helikon-mini_3.3.0.zip | cut -d ' ' -f 1)" = "f177650eb15aaec413062403ac7b784a6dbb298cc1164e10c20a0a82a53b7ac4"
+          test "$(sha256sum Helikon-mini_3.3.0_SHA256SUMS.txt | cut -d ' ' -f 1)" = "9a3b9aa6a9b3e44cf7753ba87a2887d1794403e8452b48b3b991d18419c776bf"
+
+      - name: Refuse an existing tag or Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ! git ls-remote --exit-code --tags origin refs/tags/v3.3.0
+          ! gh release view v3.3.0 --repo "$GITHUB_REPOSITORY"
+
+      - name: Publish v3.3.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          asset_dir="$RUNNER_TEMP/release-assets"
+          gh release create v3.3.0 \
+            "$asset_dir/Helikon-mini_3.3.0.zip#Deterministic eight-file Helikon-mini 3.3.0 package" \
+            "$asset_dir/Helikon-mini_3.3.0_SHA256SUMS.txt#SHA-256 checksums for the package and all eight members" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Helikon-mini 3.3.0 / rev34" \
+            --notes "Final open-source Helikon-mini 3.3.0 release. Runtime remains exactly two layers with six compressed Operating Layer memories. Static validation: 34 pass, 0 fail, 1 provisional live-host check, 2 not applicable. Live-host installation and behavioral QA were not executed and are not claimed."
+
+      - name: Verify published Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view v3.3.0 \
+            --repo "$GITHUB_REPOSITORY" \
+            --json url,tagName,isDraft,isPrerelease,targetCommitish,assets

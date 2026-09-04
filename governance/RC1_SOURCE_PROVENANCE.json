@@ -1,0 +1,16 @@
+{
+  "source": "/workspace/scratch/426eef082311/helikon-mini-3.3.0-rc1/release/v3.3.0",
+  "source_candidate": "Helikon-mini 3.3.0 RC1",
+  "observation_date": "2026-09-04",
+  "preservation_required": true,
+  "files": [
+    {"filename":"Helikon-mini_CHANGELOG_v3.3.0.md","bytes":24559,"sha256":"ca906315b2909053710f10659e490ec21fc1a12d9e188097cada97d247c8c26f"},
+    {"filename":"Helikon-mini_Install_Package_v3.3.0.json","bytes":30918,"sha256":"4ebe98b0a83a85c689c3ace9d0fe58762da21fb5c8e95665314080467f146097"},
+    {"filename":"Helikon-mini_LICENSE.md","bytes":1113,"sha256":"a24d15eb5df0e48c2cecd8e469a702a08905a9aea02261c2a10cedd11b703e9d"},
+    {"filename":"Helikon-mini_OPERATING_LAYER_v3.3.0_install.md","bytes":16067,"sha256":"cadf565edad19b3508242df647bea0c0a41f74e4ef5b26882f9ac9bb25765e80"},
+    {"filename":"Helikon-mini_QA_PACK_v3.3.0.md","bytes":6004,"sha256":"c872d89780a87cb215d2f64bc7e7402e2b158efce72ce4e6b7f90bb13191ddd3"},
+    {"filename":"Helikon-mini_README_v3.3.0.md","bytes":4890,"sha256":"65cd4c18357db651ea8988b195d20347d162ec6f50801af5338f82931b9ff35d"},
+    {"filename":"Helikon-mini_SHIP_rev32.md","bytes":3084,"sha256":"d2c8ffb0618fcb25462fbab813d3ad31e64ea53e13efda45a99f0350d4108213"},
+    {"filename":"Helikon-mini_SYSTEM_LAYER_v3.3.0_install.md","bytes":5161,"sha256":"c5c6d99e0164180342a6165e32847eb8dfa31460982864defe0039514051ce80"}
+  ]
+}

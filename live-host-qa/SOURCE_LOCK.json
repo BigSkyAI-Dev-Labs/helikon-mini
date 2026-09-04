@@ -1,0 +1,125 @@
+{
+  "schema_id": "helikon_mini.live_host_qa_source_lock",
+  "schema_version": "0.1.0",
+  "observation_date": "2026-09-04",
+  "candidate": {
+    "package_version": "3.3.0",
+    "candidate_revision": "RC2 / rev33",
+    "lifecycle_state": "draft_candidate",
+    "distribution_archive": {
+      "archive_path": "packages/Helikon-mini_3.3.0_RC2_draft_candidate.zip",
+      "bytes": 35925,
+      "sha256": "57df3d12bbf0c9b466075a7187ce781437fb74f43545a326df1e75920c8e0a3f"
+    },
+    "install_package": {
+      "member_path": "Helikon-mini_Install_Package_v3.3.0.json",
+      "bytes": 35614,
+      "sha256": "9aea3fee899706f1e4c223c037a5825a49ab6e6d88374c9be027ca4d23cf275a"
+    },
+    "system_payloads": [
+      {
+        "id": "custom_instructions",
+        "chars": 1495,
+        "sha256": "87e05fc6b02e7c102466a787317dea74dc7af836fff3cce4bf60293eaf6614a5"
+      },
+      {
+        "id": "more_about_you",
+        "chars": 1043,
+        "sha256": "3de4f68df3020e3b9028c734c753b0f8c7dd93106a769ba63a095900be6e8ad3"
+      }
+    ],
+    "operating_memories": [
+      {
+        "memory_name": "Helikon-mini.Aoideon.Canon",
+        "drift_sentinel": "HM-AOCAN-3.3.0-REV1",
+        "chars": 2605,
+        "sha256": "2294ac60ade8dc0ed6ef1885f364f7ef760650fc78597d8ffd492d1ef7ccd3af"
+      },
+      {
+        "memory_name": "Helikon-mini.Aoideon.Enforcement",
+        "drift_sentinel": "HM-AOENF-3.3.0-REV1",
+        "chars": 1789,
+        "sha256": "06f70af875ddb819cd1bbdc94ba488fcc7ebc38b5beb49cc31d57e8487416878"
+      },
+      {
+        "memory_name": "Helikon-mini.Meleteon.Budget",
+        "drift_sentinel": "HM-MEBUD-3.3.0-REV1",
+        "chars": 1666,
+        "sha256": "3f84a031909cadda10ab6b46fc10c35b332711ca4ea4d8e416b8a8f4242bcc3a"
+      },
+      {
+        "memory_name": "Helikon-mini.Meleteon.Builder",
+        "drift_sentinel": "HM-MEBUI-3.3.0-REV1",
+        "chars": 1778,
+        "sha256": "80832540e37316495478263ddfbf883a972bca74d61d1b97cfedcf2fa639308c"
+      },
+      {
+        "memory_name": "Helikon-mini.Mnemeon.Digests",
+        "drift_sentinel": "HM-MNDIG-3.3.0-REV1",
+        "chars": 1578,
+        "sha256": "3b14c6f04eaf624aa577affb2a8d33af5d0961c247ae6f16bc3caa1f0abffe8f"
+      },
+      {
+        "memory_name": "Helikon-mini.Mnemeon.Guard",
+        "drift_sentinel": "HM-MNGUA-3.3.0-REV1",
+        "chars": 2016,
+        "sha256": "5a31c8f3025b47f663801076cc5e632c7070c314d1aa076d52138754c5817f5c"
+      }
+    ]
+  },
+  "upgrade_baseline": {
+    "package_version": "3.2.0",
+    "lifecycle_state": "draft_candidate",
+    "ship_revision": "rev31",
+    "install_package": {
+      "archive_path": "packages/Helikon-mini_Install_Package_v3.2.0.json",
+      "bytes": 33336,
+      "sha256": "3205dc3a3bab71af86347f90f99ded6512133ddb049650209ef27e244619b4e4"
+    },
+    "system_payloads": [
+      {
+        "id": "custom_instructions",
+        "chars": 1403,
+        "sha256": "9489928c52fc04b027b8218b0f9fd80858de2ae3c9b03ab99b9ec43ea6b5d3c0"
+      },
+      {
+        "id": "more_about_you",
+        "chars": 948,
+        "sha256": "8c5fd47cf60bbe4146cd3efbd25106ac39a9e2b15e10d986af8973e9751c36b3"
+      }
+    ]
+  },
+  "official_openai_documentation": [
+    {
+      "topic": "memory",
+      "url": "https://help.openai.com/en/articles/8590148-memory-faq",
+      "checked_on": "2026-09-04",
+      "qa_relevance": "Memory may be synthesized and may not expose every exact record; legacy saved-memory controls may be available."
+    },
+    {
+      "topic": "custom_instructions",
+      "url": "https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions",
+      "checked_on": "2026-09-04",
+      "qa_relevance": "Web and desktop place Custom Instructions under Settings and Personalization; availability and labels must still be observed."
+    },
+    {
+      "topic": "projects",
+      "url": "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt",
+      "checked_on": "2026-09-04",
+      "qa_relevance": "Project instructions and project memory can change which context is available; ordinary chat remains the account-level baseline."
+    },
+    {
+      "topic": "temporary_chat",
+      "url": "https://help.openai.com/en/articles/8914046-temporary-chat-faq",
+      "checked_on": "2026-09-04",
+      "qa_relevance": "Temporary Chat behavior varies by personalization selection and cannot be assumed to create new memories."
+    }
+  ],
+  "runtime_boundary": {
+    "runtime_layer_count": 2,
+    "system_layer_host": "Personalization",
+    "operating_layer_host": "Saved Memories",
+    "qa_files_are_runtime": false,
+    "host_classifications_are_runtime": false
+  }
+}

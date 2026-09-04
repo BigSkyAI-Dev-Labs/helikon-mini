@@ -1,0 +1,346 @@
+runsheet_schema: helikon-runsheet-v0.1
+goal: >-
+  Execute a separately authorized, evidence-bearing live-host QA campaign for
+  Helikon-mini 3.3.0 RC2 / rev33 without touching any production or primary
+  account profile, and determine clean-install, visibility/status,
+  Project-boundary, upgrade, deduplication, and rollback behavior.
+action_class: external_or_system_affecting_action
+operating_state: OPERATOR
+scope:
+  included:
+    - Preflight validation of the locked RC2 distribution and v3.2 upgrade baseline.
+    - One clean-install track in a disposable ChatGPT profile.
+    - One v3.2-to-v3.3 upgrade and rollback track in a second disposable profile.
+    - Personalization persistence checks for two separate System Layer fields.
+    - Six ordered Saved Memory commit attempts and truthful status classification.
+    - Capability-conditioned legacy-visible, improved-opaque, memory-unavailable, ordinary-chat, and Project checks.
+    - Local evidence validation and a human-reviewed QA receipt.
+  excluded:
+    - Any production, primary, or non-disposable ChatGPT account or workspace.
+    - GitHub changes, publication, deployment, scheduling, messaging, or automation.
+    - Promotion of RC2 from draft_candidate or modification of the rev33 release bytes.
+    - Blind memory reinstall, deletion, or overwrite when exact host state is not inspectable.
+    - Deletion of disposable profiles, chats, Projects, or evidence files.
+  exact_targets:
+    - packages/Helikon-mini_3.3.0_RC2_draft_candidate.zip
+    - packages/Helikon-mini_Install_Package_v3.2.0.json
+    - Disposable Profile A for clean-install testing; exact identifier required before execution.
+    - Disposable Profile B for v3.2 upgrade and rollback; exact identifier required before execution.
+    - A normal non-Temporary ordinary chat in each disposable profile.
+target_surfaces:
+  - surface: Local files
+    target: This QA kit, its locked packages, copied evidence template, and report copy.
+    read_write_posture: Read source files; write only new evidence and report copies.
+  - surface: ChatGPT Personalization
+    target: Two separately identified disposable profiles only.
+    read_write_posture: Future system effect; exact field changes require separate opt-in.
+  - surface: ChatGPT Saved Memory
+    target: Six Helikon-mini records in the disposable profiles only.
+    read_write_posture: Future system effect; replacement or deletion additionally requires same-turn YES.
+  - surface: ChatGPT Project
+    target: One unshared disposable Project if available and separately authorized.
+    read_write_posture: Optional future external/system effect; no sharing or publication.
+inputs:
+  required:
+    - SOURCE_LOCK.json
+    - Locked RC2 distribution with SHA-256 57df3d12bbf0c9b466075a7187ce781437fb74f43545a326df1e75920c8e0a3f
+    - Locked v3.2 package with SHA-256 3205dc3a3bab71af86347f90f99ded6512133ddb049650209ef27e244619b4e4
+    - Exact identifiers for two disposable profiles under Operator control
+    - Execution-date observations of visible Personalization, Memory, and Project labels
+    - Specific live system-action opt-in naming both disposable targets
+    - Same-turn YES for the upgrade and rollback replacement/deletion stages
+  present:
+    - RC2 distribution and final static validation evidence
+    - Preserved v3.2 install package
+    - QA test matrix, evidence template, report template, and local validators
+    - Official OpenAI documentation baseline checked 2026-09-04
+    - Current-turn authorization to build this kit only
+  missing:
+    - Exact disposable profile identifiers
+    - Observed live access, plan/workspace type, client version, and visible labels
+    - Live system-action opt-in
+    - Same-turn destructive confirmation for replacement and rollback
+  provenance:
+    - Helikon-mini 3.3.0 RC2 / rev33 release and static QA receipt
+    - Helikon-mini 3.2.0 / rev31 preserved source package
+    - Official OpenAI Memory, Custom Instructions, Projects, and Temporary Chat documentation
+constraints:
+  - Runtime remains exactly two layers: Personalization System Layer plus six-record Saved Memory Operating Layer.
+  - QA profiles, files, classifications, Projects, tools, and chats are not runtime layers or authority.
+  - FULL requires both exact System payloads and direct verification of all six exact memory names and sentinels.
+  - Improved, merged, synthesized, incomplete, or opaque memory is PARTIAL with missing unknown unless an exact set-diff is independently observable.
+  - Memory unavailable yields NONE for the Operating Layer and cannot support an install-success claim.
+  - Never treat assistant familiarity, response behavior, or an assistant assertion as persistence proof.
+  - Never use a Temporary Chat as the installation baseline.
+  - Never merge the two System payloads into one field.
+  - Do not proceed with upgrade, deduplication, or rollback when exact records cannot be inspected.
+  - No GitHub, publishing, messaging, scheduling, automation, or production-account action.
+assumptions:
+  - The future human Operator can access the ChatGPT web interface and capture screenshots or equivalent evidence.
+  - At least one disposable profile can expose a memory mode suitable for a clean-install attempt.
+  - Capability-conditioned tests may be marked not_applicable when the relevant host mode is genuinely unavailable.
+steps:
+  - step_id: QA-01
+    action: Verify both locked package hashes, validate the kit, and re-check official documentation for changed labels or behavior.
+    surface: Local files and public official documentation
+    mutation_class: read_only
+    action_class: recommendation_only
+    operating_state: OPERATOR
+    readiness: {S: ready, D: ready, T: ready, N: partial, P: ready, A: not_applicable, E: not_applicable, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Read-only preflight does not require build authorization.
+    external_opt_in_state: not_applicable
+    destructive_confirmation_state: not_applicable
+    preconditions:
+      - Network is available for official documentation review, or changed-host claims remain explicitly unverified.
+    expected_result: Package hashes match SOURCE_LOCK.json and execution-date host guidance is recorded.
+    evidence: Hash output, kit validator output, URLs, observation timestamps, and any documented drift.
+    failure_route: Stop before host mutation; replace no files; request a corrected or re-locked kit.
+  - step_id: QA-02
+    action: Identify Profile A and Profile B, confirm both are disposable and unshared, record plan/client/region if known, visible labels, and baseline state.
+    surface: ChatGPT account UI
+    mutation_class: read_only
+    action_class: recommendation_only
+    operating_state: OPERATOR
+    readiness: {S: partial, D: ready, T: partial, N: ready, P: partial, A: not_applicable, E: not_applicable, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Observation only; exact profiles are unresolved.
+    external_opt_in_state: not_applicable
+    destructive_confirmation_state: not_applicable
+    preconditions:
+      - Operator is signed into the intended disposable profiles.
+      - No production or primary account is selected.
+    expected_result: Exact targets and pre-action baselines are recorded before mutation.
+    evidence: Profile identifiers or redacted labels, screenshots, visible settings, and baseline evidence references.
+    failure_route: Stop if either profile cannot be distinguished from a production or primary account.
+  - step_id: QA-03
+    action: In Profile A, save the RC2 Custom Instructions and More About You payloads into two separate visible fields, reopen Personalization, and compare observed characters and SHA-256 values.
+    surface: ChatGPT Personalization
+    mutation_class: system_effect
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: ready, T: partial, N: ready, P: partial, A: ready, E: missing, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Kit build authorized; live save is not authorized.
+    external_opt_in_state: missing for exact Profile A
+    destructive_confirmation_state: not_applicable for initially empty disposable fields; required if a nonempty field would be replaced
+    preconditions:
+      - Exact Profile A identifier and baseline evidence exist.
+      - Profile A is disposable and both required fields are visible.
+      - Enable customization is available and enabled.
+      - Current-turn live system-action opt-in names Profile A and both fields.
+      - If either field is nonempty, stop unless replacement is explicitly scoped and same-turn YES is present.
+    expected_result: Two distinct payloads persist exactly after closing and reopening Personalization.
+    evidence: Copied-back character counts and SHA-256 values plus before/after/reopen evidence references.
+    failure_route: Stop with CLARIFY_NEEDED; do not merge payloads or try unrelated fields.
+  - step_id: QA-04
+    action: In Profile A ordinary chat, run INSTALL and six ordered EXTRACT, REMEMBER, NEXT cycles, then FINAL_VERIFY.
+    surface: ChatGPT ordinary chat and Saved Memory
+    mutation_class: system_effect
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: partial, T: partial, N: ready, P: partial, A: ready, E: missing, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Kit build authorized; six live commit attempts are not authorized.
+    external_opt_in_state: missing for exact Profile A and six named records
+    destructive_confirmation_state: not_applicable only for a clean empty baseline; replacement/deletion requires same-turn YES
+    preconditions:
+      - QA-03 passed.
+      - A normal non-Temporary chat is confirmed.
+      - Saved Memory is available and enabled.
+      - Baseline shows no conflicting Helikon-mini records, or execution stops.
+      - Current-turn opt-in names the six record attempts in Profile A.
+    expected_result: Exactly six attempts occur in canonical order; REMEMBER is reported only as an attempt; no exact-save claim occurs without direct evidence.
+    evidence: Chat transcript references, attempt counter, emitted wrappers, and any host save/update notifications.
+    failure_route: Stop at the first ordering, boundary, truncation, memory availability, or truth-claim failure; do not advance or retry blindly.
+  - step_id: QA-05
+    action: Classify the observed memory host and test visible, opaque, or unavailable status behavior plus ordinary-chat system status.
+    surface: ChatGPT Personalization, Memory, and ordinary chat
+    mutation_class: read_only
+    action_class: recommendation_only
+    operating_state: OPERATOR
+    readiness: {S: partial, D: partial, T: partial, N: ready, P: partial, A: not_applicable, E: not_applicable, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Read-only review after authorized install attempts.
+    external_opt_in_state: not_applicable
+    destructive_confirmation_state: not_applicable
+    preconditions:
+      - QA-04 completed or stopped with preserved evidence.
+    expected_result: legacy-visible can reach FULL only with exact proof; improved-opaque remains PARTIAL with missing unknown; memory-unavailable yields NONE for Operating.
+    evidence: Visible record names/sentinels or explicit opacity/unavailability evidence, FINAL_VERIFY output, and ordinary-chat status output.
+    failure_route: Downgrade the status to PARTIAL or NONE; never infer absent evidence.
+  - step_id: QA-06
+    action: If a non-destructive memory on/off control is present, test the memory-unavailable path and restore the original toggle state without deleting memory.
+    surface: ChatGPT Memory settings
+    mutation_class: system_effect
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: partial, T: partial, N: ready, P: partial, A: ready, E: missing, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Not authorized for live toggle changes.
+    external_opt_in_state: missing for exact Profile A toggle
+    destructive_confirmation_state: not_applicable only if the control does not delete or replace data
+    preconditions:
+      - The UI separates disabling memory from deleting memory.
+      - Original toggle state is captured.
+      - Current-turn opt-in names disable, status test, and restoration.
+    expected_result: Operating status is NONE while unavailable and the original non-destructive toggle state is restored.
+    evidence: Before, disabled, status, and restored evidence references.
+    failure_route: Mark not_applicable if only a destructive delete-and-disable path is offered; do not select it.
+  - step_id: QA-07
+    action: If available and authorized, compare an ordinary chat with one unshared disposable Project chat without treating Project behavior as runtime proof.
+    surface: ChatGPT Project
+    mutation_class: system_effect
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: partial, T: partial, N: ready, P: partial, A: ready, E: missing, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Optional Project test not authorized.
+    external_opt_in_state: missing for exact Project creation/use target
+    destructive_confirmation_state: not_applicable; Project deletion is excluded
+    preconditions:
+      - Current-turn opt-in names the disposable Project target and memory mode.
+      - Project remains private/unshared.
+    expected_result: Project-specific instructions or memory do not promote account-level runtime status; ordinary chat remains baseline.
+    evidence: Project mode/settings and paired prompt outputs.
+    failure_route: Mark not_applicable when unavailable; retain any created Project for review rather than deleting it.
+  - step_id: QA-08
+    action: In empty Profile B, establish and directly verify the locked v3.2 baseline.
+    surface: ChatGPT Personalization and Saved Memory
+    mutation_class: system_effect
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: ready, T: partial, N: ready, P: partial, A: ready, E: missing, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: v3.2 baseline installation not authorized.
+    external_opt_in_state: missing for exact Profile B and v3.2 payloads
+    destructive_confirmation_state: not_applicable only for a verified empty baseline
+    preconditions:
+      - Exact Profile B identifier and empty baseline evidence exist.
+      - Legacy-visible exact record inspection is available; otherwise skip upgrade/rollback track.
+      - Current-turn opt-in names v3.2 baseline installation.
+    expected_result: Both v3.2 System payloads and all six v3.2 names/sentinels are directly verified.
+    evidence: Copied-back System hashes, exact record/sentinel inventory, and baseline evidence references.
+    failure_route: Stop; mark upgrade and rollback tests blocked or not_applicable rather than proceeding opaquely.
+  - step_id: QA-09
+    action: Replace the verified Profile B v3.2 System and Operating payloads with RC2, then check deduplication and absence of mixed v3.2/v3.3 sentinels.
+    surface: ChatGPT Personalization and Saved Memory
+    mutation_class: destructive
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: partial, T: partial, N: ready, P: partial, A: ready, E: missing, Y: missing, R: ready, B: partial, C: ready}
+    authorization_state: Upgrade replacement not authorized.
+    external_opt_in_state: missing for exact Profile B replacement
+    destructive_confirmation_state: missing same-turn YES
+    preconditions:
+      - QA-08 passed with direct exact-record evidence.
+      - A complete v3.2 rollback snapshot and source lock exist.
+      - Current-turn opt-in names the exact replacements.
+      - Same-turn YES authorizes replacement/deletion of the exact v3.2 targets.
+    expected_result: RC2 persists without duplicate names, residual v3.2 sentinels, or mixed-version records.
+    evidence: Before/after exact inventories, System hashes, record names, sentinels, and transcript references.
+    failure_route: Stop immediately, preserve mixed-state evidence, and do not attempt an unplanned repair.
+  - step_id: QA-10
+    action: Roll Profile B back to the locked v3.2 snapshot and verify removal of RC2-only state.
+    surface: ChatGPT Personalization and Saved Memory
+    mutation_class: destructive
+    action_class: external_or_system_affecting_action
+    operating_state: OPERATOR
+    readiness: {S: partial, D: partial, T: partial, N: ready, P: partial, A: ready, E: missing, Y: missing, R: ready, B: partial, C: ready}
+    authorization_state: Rollback not authorized.
+    external_opt_in_state: missing for exact Profile B rollback
+    destructive_confirmation_state: missing same-turn YES
+    preconditions:
+      - QA-09 completed or failed with an inspectable state.
+      - Exact v3.2 restoration targets are named.
+      - Current-turn rollback opt-in and same-turn YES are present.
+    expected_result: Both v3.2 System hashes and all six v3.2 records/sentinels are restored, with no directly observable RC2 residue.
+    evidence: Exact post-rollback System hashes, record/sentinel inventory, and residual-state review.
+    failure_route: Stop in OPERATOR state with a mixed-state incident report; do not retry without a new reviewed repair plan.
+  - step_id: QA-11
+    action: Complete a copied evidence JSON, validate it locally, draft the QA report, and submit both for human review.
+    surface: Local files
+    mutation_class: internal_mutation
+    action_class: bounded_execution
+    operating_state: ENGINEER
+    readiness: {S: ready, D: partial, T: ready, N: not_applicable, P: ready, A: partial, E: not_applicable, Y: not_applicable, R: ready, B: partial, C: ready}
+    authorization_state: Requires build authorization after live observations exist.
+    external_opt_in_state: not_applicable
+    destructive_confirmation_state: not_applicable; create new files only
+    preconditions:
+      - All attempted tests have direct evidence or explicit blocked/not_applicable status.
+      - The original template remains unchanged; work occurs in a new copy.
+    expected_result: Machine-checked evidence and a human-reviewed disposition of pass, fail, blocked, or provisional.
+    evidence: Validator output, completed evidence JSON, report, and reviewer decision.
+    failure_route: One bounded repair and recheck; otherwise stop without a passing receipt.
+expected_outputs:
+  - Completed copy of LIVE_HOST_QA_EVIDENCE_TEMPLATE.json
+  - Completed copy of LIVE_HOST_QA_REPORT_TEMPLATE.md
+  - Local validator output
+  - Human review decision preserving limitations and side effects
+acceptance_criteria:
+  - Locked inputs match SOURCE_LOCK.json before any live action.
+  - No production or primary profile is touched.
+  - Each live mutation is separately authorized for exact targets.
+  - Replacement or deletion occurs only with same-turn YES and an exact rollback snapshot.
+  - System payload persistence is established by copied-back characters and SHA-256, not response behavior.
+  - Six memory attempts occur in exact order and are never described as exact saves without direct evidence.
+  - Host classification and emitted runtime status obey the rev33 truth boundary.
+  - Upgrade/rollback is skipped rather than guessed on opaque hosts.
+  - Project behavior never promotes runtime completeness.
+  - All attempted, completed, incomplete, and unexpected side effects are recorded.
+  - Human reviewer, not the validator, decides release promotion.
+tool_path:
+  required_tools:
+    - Human-controlled browser session with access to exact disposable ChatGPT profiles
+    - Screenshot or equivalent evidence capture
+    - Python 3 standard library for local validation and deterministic packaging
+  observed_tools:
+    - Python 3 and local RC2/v3.2 source files are available in the build workspace
+    - No authenticated live ChatGPT settings or memory mutation mechanism was used or verified
+  unavailable_tools:
+    - No in-turn tool path is available here to inspect or mutate ChatGPT Personalization or Saved Memory directly
+network_posture: >-
+  Build stage is local except read-only official OpenAI documentation review.
+  Future live QA requires authenticated ChatGPT network access only; no GitHub,
+  publishing, messaging, or third-party network action is allowed.
+authorization_state: >-
+  Current-turn APPROVE authorizes creation and validation of this RUNSHEET and
+  operator kit only. It does not authorize live installation, settings changes,
+  memory attempts, Project creation, upgrade, rollback, deletion, or overwrite.
+external_opt_in_state: missing for every future live or system-affecting stage
+destructive_confirmation_state: missing; upgrade and rollback require exact-target same-turn YES
+preconditions:
+  - Human review accepts the kit without altering the locked RC2 bytes.
+  - Two exact disposable profiles are identified and baselined.
+  - Execution-date official documentation and visible labels are reviewed.
+  - Exact future opt-ins and destructive confirmations are obtained per step.
+dependencies:
+  - RC2 distribution SHA-256 lock
+  - v3.2 package SHA-256 lock
+  - Host support for required Personalization fields
+  - Host support for Memory; legacy-visible support is required for FULL and upgrade/rollback proof
+  - Operator-controlled evidence capture
+review_path:
+  - Static kit validator
+  - Operator preflight review
+  - Separate authorization review before live mutations
+  - Post-run evidence validator
+  - Human release decision
+completion_evidence:
+  - Package and source-lock hash output
+  - Execution-date documentation observations
+  - Before/after/reopen evidence for both System fields
+  - Ordered six-attempt transcript evidence
+  - Exact names/sentinels or explicit opacity/unavailability evidence
+  - Ordinary-chat and optional Project comparison evidence
+  - Upgrade/deduplication/rollback evidence or explicit capability blocker
+  - Completed evidence JSON, validator output, and human-reviewed report
+rollback:
+  - Build stage creates new kit files only; rollback is removal of those new files after review and would require separate destructive authorization.
+  - Clean-install Profile A is retained unchanged after testing unless a later exact cleanup authorization and YES are provided.
+  - Profile B rollback restores locked v3.2 System payloads and six records only after direct baseline capture, exact opt-in, and same-turn YES.
+  - If rollback fails, stop with a mixed-state incident report; do not repeat blindly.
+blockers:
+  - Exact disposable Profile A and Profile B identifiers are not yet supplied.
+  - Live access, plan/workspace type, client version, visible labels, and memory mode are unobserved.
+  - No specific live system-action opt-in exists.
+  - No same-turn YES exists for upgrade or rollback replacement/deletion.
+  - FULL and upgrade/rollback cannot be proven if exact saved records and sentinels are not inspectable.
+next_operator_action: >-
+  Review this kit, identify the exact two disposable profiles, and decide which
+  capability-conditioned tracks are available. Then issue a new exact live-QA
+  authorization; include same-turn YES only if the reviewed upgrade/rollback
+  replacement targets are accepted.

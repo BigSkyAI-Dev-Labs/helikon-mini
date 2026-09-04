@@ -1,0 +1,155 @@
+runsheet_schema: helikon-runsheet-v0.1
+goal: >-
+  Build Helikon-mini 3.3.0 RC2 from the validated RC1 candidate, restoring
+  backward-compatible JSON fields/types and the independent 3.0.0 kernel
+  sentinel, then rerun deterministic static QA and packaging.
+action_class: external_or_system_affecting_action
+operating_state: EXECUTOR
+scope:
+  included:
+    - Read RC1 locally and preserve an exact RC1 source snapshot.
+    - Restore reference_saved_memories as boolean true.
+    - Move required_if_available into a new reference_saved_memories_policy field.
+    - Restore legacy setup_output_contract and ui_route_guidance field names/types while retaining RC1 additions.
+    - Restore HM_KERNEL_SENTINEL to HMK-3.0.0-REV1.
+    - Advance the internal SHIP revision from rev32 to rev33 for RC2 traceability.
+    - Rebuild the exact eight-file family, validators, deterministic archives, checksums, and static QA receipt.
+    - Save final review artifacts for Operator access.
+  excluded:
+    - Any modification of RC1 or the pinned v3.2 source.
+    - GitHub writes, branches, commits, pull requests, tags, or releases.
+    - ChatGPT installation, Saved Memory, Personalization, Project, Skill, plugin, model, or setting changes.
+    - Publication, deployment, messaging, scheduling, deletion, or overwrite of pre-existing files.
+  exact_targets:
+    - /workspace/scratch/426eef082311/helikon-mini-3.3.0-rc2
+    - /workspace/scratch/426eef082311/helikon-mini-3.3.0-rc1/release/v3.3.0
+target_surfaces:
+  - surface: Local files
+    target: /workspace/scratch/426eef082311/helikon-mini-3.3.0-rc2
+    read_write_posture: create-only
+  - surface: Local files
+    target: /workspace/scratch/426eef082311/helikon-mini-3.3.0-rc1
+    read_write_posture: read-only source
+  - surface: Connected app
+    target: ChatGPT Library RC2 review artifacts
+    read_write_posture: create-only save
+inputs:
+  required:
+    - Exact RC1 eight-file release family.
+    - Current-turn approved compatibility repair.
+  present:
+    - RC1 eight-file family and observed SHA-256 baseline.
+    - Current-turn APPROVE for the exact repair command.
+    - Local Python standard-library execution path.
+  missing: []
+  provenance:
+    - Operator-approved RC2 repair command, 2026-09-04.
+    - RC1 candidate built from GitHub commit 702b6fbdf34ebf54f455075525818fff7962edb9.
+constraints:
+  - Preserve RC1 and v3.2 unchanged.
+  - Static QA only.
+  - Preserve two runtime layers, six memory IDs, commands, modes, verdicts, and memory payload behavior from RC1 except the kernel sentinel correction.
+  - No external repository or runtime mutation.
+assumptions:
+  - RC2 requires SHIP rev33 so changed release bytes do not reuse rev32 identity.
+  - Schema 1.1.0 remains appropriate because RC2 restores compatibility without removing the additive host contract.
+steps:
+  - step_id: RC2-01
+    action: Snapshot and verify RC1 source bytes.
+    surface: Local files
+    mutation_class: internal_mutation
+    action_class: bounded_execution
+    operating_state: EXECUTOR
+    readiness: {S: ready, D: ready, T: ready, N: not_applicable, P: ready, A: ready, E: not_applicable, Y: not_applicable, R: ready, B: ready, C: ready}
+    authorization_state: current-turn APPROVE
+    external_opt_in_state: not applicable
+    destructive_confirmation_state: not applicable
+    preconditions: [Fresh RC2 target confirmed absent; RC1 source is readable.]
+    expected_result: Exact RC1 snapshot and provenance manifest.
+    evidence: SHA-256 and byte-count comparison before and after the build.
+    failure_route: Stop before build on any RC1 mismatch.
+  - step_id: RC2-02
+    action: Build the corrected eight-file RC2 release family and validators.
+    surface: Local files
+    mutation_class: internal_mutation
+    action_class: bounded_execution
+    operating_state: EXECUTOR
+    readiness: {S: ready, D: ready, T: ready, N: not_applicable, P: ready, A: ready, E: not_applicable, Y: not_applicable, R: ready, B: ready, C: ready}
+    authorization_state: current-turn APPROVE
+    external_opt_in_state: not applicable
+    destructive_confirmation_state: not applicable
+    preconditions: [RC1 snapshot verification passes.]
+    expected_result: Eight RC2 release files with restored compatibility fields and sentinel.
+    evidence: Structured JSON checks, exact projections, manifest/hash parity, and semantic assertions.
+    failure_route: Preserve failed output and perform at most one bounded repair/recheck.
+  - step_id: RC2-03
+    action: Build/reopen deterministic distribution and engineering archives and emit the receipt.
+    surface: Local files
+    mutation_class: internal_mutation
+    action_class: bounded_execution
+    operating_state: EXECUTOR
+    readiness: {S: ready, D: ready, T: ready, N: not_applicable, P: ready, A: ready, E: not_applicable, Y: not_applicable, R: ready, B: ready, C: ready}
+    authorization_state: current-turn APPROVE
+    external_opt_in_state: not applicable
+    destructive_confirmation_state: not applicable
+    preconditions: [Static release gates pass.]
+    expected_result: Reproducible ZIPs, checksums, final validation report, and receipt.
+    evidence: Reopened archive inventory/byte parity and duplicate-build hash equality.
+    failure_route: Stop and preserve evidence if the single repair allowance is exhausted.
+  - step_id: RC2-04
+    action: Save final RC2 review artifacts.
+    surface: Connected app
+    mutation_class: external_action
+    action_class: external_or_system_affecting_action
+    operating_state: EXECUTOR
+    readiness: {S: ready, D: ready, T: ready, N: ready, P: ready, A: ready, E: ready, Y: not_applicable, R: ready, B: ready, C: ready}
+    authorization_state: requested deliverable under Work Mode storage contract
+    external_opt_in_state: create-only artifact persistence
+    destructive_confirmation_state: not applicable
+    preconditions: [Local RC2 artifacts pass static QA.]
+    expected_result: New review items; no replacements.
+    evidence: Per-file successful create results.
+    failure_route: Report save failure without ambiguous retry.
+expected_outputs:
+  - release/v3.3.0 exact eight-file RC2 family with SHIP rev33
+  - validators for build, validation, deterministic distribution ZIP, and engineering packet
+  - receipts/Helikon-mini_3.3.0_STATIC_QA_RECEIPT_RC2.md
+  - dist/Helikon-mini_3.3.0_RC2_draft_candidate.zip
+  - dist/Helikon-mini_3.3.0_ENGINEERING_PACKET_RC2.zip
+  - dist/Helikon-mini_3.3.0_RC2_SHA256SUMS.txt
+acceptance_criteria:
+  - RC1 source snapshot remains byte-identical to its pre-build hash manifest.
+  - reference_saved_memories is boolean true.
+  - reference_saved_memories_policy equals required_if_available.
+  - Every named legacy setup/UI field is present with its original JSON type.
+  - New RC1 label-based and missing-field rules remain present.
+  - HM_KERNEL_SENTINEL is exactly HMK-3.0.0-REV1 everywhere active.
+  - Eight-file rev33 inventory, versions, pointers, payload hashes, projections, archive safety, and reproducibility pass.
+  - Live host QA remains explicitly provisional and unperformed.
+tool_path:
+  required_tools: [apply_patch, Python 3 standard library, local command runner, Library prepared-upload path]
+  observed_tools: [apply_patch, exec_command, Library prepare_uploads, Library finalize_uploads]
+  unavailable_tools: []
+network_posture: No network for build/QA; create-only network use for final artifact saving.
+authorization_state: Current-turn APPROVE authorizes this exact bounded RC2 build.
+external_opt_in_state: GitHub/runtime/publication actions are excluded; final artifact persistence is create-only.
+destructive_confirmation_state: Not applicable; no pre-existing file may be deleted or overwritten.
+preconditions:
+  - Fresh RC2 output path confirmed absent.
+  - RC1 eight-file hashes captured.
+dependencies: [Validated RC1 release family.]
+review_path:
+  - Inspect RC2 receipt and RC1-to-RC2 semantic diff.
+  - Separately authorize live host QA if RC2 is accepted.
+  - Separately authorize any later GitHub branch or draft PR.
+completion_evidence:
+  - RC1 provenance manifest and post-build recheck.
+  - Static validator reports.
+  - Reopened archive/member parity.
+  - Deterministic rebuild equality.
+  - Library create results.
+rollback:
+  - No existing artifact is changed.
+  - The isolated RC2 directory can be removed later only with separate destructive authorization.
+blockers: []
+next_operator_action: Review RC2; then separately authorize isolated live ChatGPT host QA.

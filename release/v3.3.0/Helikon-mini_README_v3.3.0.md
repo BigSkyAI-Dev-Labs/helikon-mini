@@ -1,6 +1,7 @@
 # Mount Helikon-mini 3.3 AIOS
 
-**Status:** `v3.3.0 draft_candidate / RC2 / rev33`  
+**Status:** `v3.3.0 release / rev34`
+
 **License:** MIT  
 **Baseline:** GitHub commit `702b6fbdf34ebf54f455075525818fff7962edb9` (v3.2.0)  
 **Posture:** free, open-source starter line for ChatGPT; not a drop-in copy of the full Mount Helikon system.
@@ -49,7 +50,7 @@ These labels are QA vocabulary only. Host behavior and UI can change; verify aga
 
 ## Install sequence
 
-1. Read `Helikon-mini_SHIP_rev33.md` and verify all eight files.
+1. Read `Helikon-mini_SHIP_rev34.md` and verify all eight files.
 2. Open `Helikon-mini_Install_Package_v3.3.0.json`; it is the installation SSOT.
 3. In a normal non-Temporary chat, send `SETUP` and install the two System Layer payloads into separate visible Personalization fields.
 4. Send `INSTALL`; then process each memory with `EXTRACT` → review → `REMEMBER` → `NEXT`.
@@ -59,15 +60,15 @@ No included file automatically changes ChatGPT. Installation requires an assista
 
 ## Upgrading from v3.2
 
-Preserve the v3.2 packet as history. Do not overwrite live settings or memories merely because 3.3 exists. First review this RC, run static validation, then use a separate sandbox/live-QA authorization to test replacement behavior. On opaque-memory hosts, avoid blind reinstall loops because exact replacement/deduplication cannot be proven.
+Preserve the v3.2 packet as history. Do not overwrite live settings or memories merely because 3.3 exists. First review this release and run static validation, then use a separate sandbox/live-QA authorization to test replacement behavior. On opaque-memory hosts, avoid blind reinstall loops because exact replacement/deduplication cannot be proven.
 
 
-## RC2 compatibility repair
+## Compatibility repair
 
-RC2 preserves RC1's host-memory truth rules while restoring machine-consumer compatibility. The legacy setup and UI JSON keys/types remain available as deprecated-compatible fields; `reference_saved_memories` remains Boolean `true`, while the host-aware `required_if_available` policy moves to `reference_saved_memories_policy`. The package-level release remains 3.3.0, but the unchanged mini kernel contract retains its independent `HMK-3.0.0-REV1` sentinel. SHIP advances to rev33 so corrected bytes never reuse rev32 identity.
+Version 3.3.0 preserves the validated host-memory truth rules while restoring machine-consumer compatibility. The legacy setup and UI JSON keys/types remain available as deprecated-compatible fields; `reference_saved_memories` remains Boolean `true`, while the host-aware `required_if_available` policy lives in `reference_saved_memories_policy`. The unchanged mini kernel contract retains its independent `HMK-3.0.0-REV1` sentinel. SHIP advances to rev34 because final release bytes must not reuse the rev33 candidate identity.
 
 ## Distribution and QA
 
-The distribution contains exactly the eight files named in `Helikon-mini_SHIP_rev33.md`. Engineering validators are intentionally outside the shipped eight-file ZIP. Static QA can establish package integrity and projection parity; live host persistence remains provisional until separately tested.
+The distribution contains exactly the eight files named in `Helikon-mini_SHIP_rev34.md`. Engineering validators are intentionally outside the shipped eight-file ZIP. Static QA establishes package integrity and projection parity; live host persistence remains unverified until separately tested.
 
-The optional installer GPT is not part of this RC. Treat any such GPT as experimental and non-authoritative unless its knowledge, prompts, and version pointers are synchronized and verified against this exact package.
+The optional installer GPT is not part of this release. Treat any such GPT as experimental and non-authoritative unless its knowledge, prompts, and version pointers are synchronized and verified against this exact package.

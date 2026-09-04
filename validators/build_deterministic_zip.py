@@ -18,7 +18,7 @@ FILES = [
     "Helikon-mini_QA_PACK_v3.3.0.md",
     "Helikon-mini_README_v3.3.0.md",
     "Helikon-mini_CHANGELOG_v3.3.0.md",
-    "Helikon-mini_SHIP_rev33.md",
+    "Helikon-mini_SHIP_rev34.md",
     "Helikon-mini_LICENSE.md",
 ]
 FIXED_TIME = (2026, 9, 4, 0, 0, 0)

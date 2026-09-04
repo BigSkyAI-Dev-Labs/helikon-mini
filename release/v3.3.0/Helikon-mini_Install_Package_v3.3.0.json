@@ -3,7 +3,7 @@
   "schema_version": "1.1.0",
   "package_version": "3.3.0",
   "system_name": "Mount Helikon-mini 3.3 AIOS",
-  "status": "draft_candidate",
+  "status": "release",
   "package_role": "primary_install_artifact_and_installation_ssot",
   "package_posture": {
     "single_file_container": true,
@@ -33,7 +33,7 @@
     "modified_date": "2026-09-04",
     "maintainer": "Loga Fixico",
     "target_platform": "ChatGPT Free and compatible paid plans; host behavior varies",
-    "reference_ship_manifest": "Helikon-mini_SHIP_rev33.md",
+    "reference_ship_manifest": "Helikon-mini_SHIP_rev34.md",
     "built_from": {
       "repository": "FixicoAI-DevLabs/mount-helikon-mini-aios",
       "commit": "702b6fbdf34ebf54f455075525818fff7962edb9",
@@ -47,9 +47,10 @@
       "Synthesized, merged, incomplete, or opaque host memory is PARTIAL; use missing: unknown unless exact set-diff is possible.",
       "Projects and chat history remain optional and cannot establish runtime completeness.",
       "v3.3.0 is a packaging and host-compatibility repair, not an import of the full twelve-record Helikon runtime.",
-      "RC2 restores legacy JSON field names/types as deprecated-compatible surfaces and restores the independently versioned kernel sentinel."
+      "Version 3.3.0 retains the compatibility repair, legacy JSON field types, and independently versioned kernel sentinel validated before release.",
+      "Static release validation does not prove live-host installation, persistence, or runtime activation."
     ],
-    "candidate_revision": "RC2 / rev33",
+    "release_revision": "rev34",
     "derived_from_candidate": {
       "candidate": "Helikon-mini 3.3.0 RC1 / rev32",
       "source_snapshot": "source-rc1/v3.3.0"
@@ -296,8 +297,8 @@
     "projection_role": "human_readable_projection_or_fallback"
   },
   "ship_sync": {
-    "current_manifest": "Helikon-mini_SHIP_rev33.md",
-    "current_manifest_rev": "rev33",
+    "current_manifest": "Helikon-mini_SHIP_rev34.md",
+    "current_manifest_rev": "rev34",
     "shipped_bundle_count": 8,
     "shipped_files": [
       "Helikon-mini_Install_Package_v3.3.0.json",
@@ -306,14 +307,14 @@
       "Helikon-mini_QA_PACK_v3.3.0.md",
       "Helikon-mini_README_v3.3.0.md",
       "Helikon-mini_CHANGELOG_v3.3.0.md",
-      "Helikon-mini_SHIP_rev33.md",
+      "Helikon-mini_SHIP_rev34.md",
       "Helikon-mini_LICENSE.md"
     ],
     "source_file_inventory": [
       {
         "filename": "Helikon-mini_SYSTEM_LAYER_v3.3.0_install.md",
-        "sha256": "d16bdd5633303bec7af755a9ab8cf56adde82973de9218e501542ad53bb7961b",
-        "bytes": 5411
+        "sha256": "9c31931fa68c360d28ae08411056e9683e9e0a8407bac9a72f39cbf428e090d6",
+        "bytes": 5412
       },
       {
         "filename": "Helikon-mini_OPERATING_LAYER_v3.3.0_install.md",
@@ -322,23 +323,23 @@
       },
       {
         "filename": "Helikon-mini_QA_PACK_v3.3.0.md",
-        "sha256": "0db124e37e2dfc785ac328379f674aa7911e717b6e3e2b14aa3cd4edde651f5b",
-        "bytes": 6911
+        "sha256": "906afb8b14ef3228c495be185c0d5a8011a39a01825a02a941a1dc4bdc3702dc",
+        "bytes": 6946
       },
       {
         "filename": "Helikon-mini_README_v3.3.0.md",
-        "sha256": "5f9edec103acfb6c53f5138492c57bbdf03f70a3caeea18dcc557a519be11aa6",
-        "bytes": 5459
+        "sha256": "f573357a2cb111e06823556a644719dd9285071bc2227c4cd4338a2c97329b8c",
+        "bytes": 5449
       },
       {
         "filename": "Helikon-mini_CHANGELOG_v3.3.0.md",
-        "sha256": "21156a8406afbdcdfb4642bdeb439d65ea4ad0ffa25fb539e4f64157fcbb5938",
-        "bytes": 25694
+        "sha256": "142fe6db3b1dc2f89b18393d2026c5016b1ee16c4627643a72eb36b6e258da7f",
+        "bytes": 26478
       },
       {
-        "filename": "Helikon-mini_SHIP_rev33.md",
-        "sha256": "bfc7f6ebd170ed21d3f00b9f756fcb3b7e2ee50413181db891df1b35c5141970",
-        "bytes": 3137
+        "filename": "Helikon-mini_SHIP_rev34.md",
+        "sha256": "902120653da07f3d7d141dd418bb72e54612aeb23a05f14e87158241cf2a9fab",
+        "bytes": 3095
       },
       {
         "filename": "Helikon-mini_LICENSE.md",

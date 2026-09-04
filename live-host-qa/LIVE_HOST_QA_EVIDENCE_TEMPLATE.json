@@ -1,0 +1,98 @@
+{
+  "schema_id": "helikon_mini.live_host_qa_evidence",
+  "schema_version": "0.1.0",
+  "candidate": "Helikon-mini 3.3.0 RC2 / rev33",
+  "source_lock": "SOURCE_LOCK.json",
+  "execution": {
+    "started_at_utc": null,
+    "completed_at_utc": null,
+    "operator": null,
+    "reviewer": null,
+    "authorization_text": null,
+    "system_action_opt_in_confirmed": false,
+    "destructive_yes_confirmed": false
+  },
+  "environment": {
+    "client": null,
+    "client_version": null,
+    "plan_or_workspace_type": null,
+    "region_if_known": null,
+    "profile_a_clean_install": null,
+    "profile_b_upgrade_rollback": null,
+    "ordinary_non_temporary_chat_confirmed": false,
+    "visible_personalization_labels": [],
+    "visible_memory_labels": [],
+    "visible_project_memory_labels": [],
+    "host_classification": "unknown"
+  },
+  "system_layer_observations": [
+    {
+      "id": "custom_instructions",
+      "expected_chars": 1495,
+      "expected_sha256": "87e05fc6b02e7c102466a787317dea74dc7af836fff3cce4bf60293eaf6614a5",
+      "observed_chars": null,
+      "observed_sha256": null,
+      "persisted_after_reopen": null,
+      "evidence_refs": [],
+      "notes": null
+    },
+    {
+      "id": "more_about_you",
+      "expected_chars": 1043,
+      "expected_sha256": "3de4f68df3020e3b9028c734c753b0f8c7dd93106a769ba63a095900be6e8ad3",
+      "observed_chars": null,
+      "observed_sha256": null,
+      "persisted_after_reopen": null,
+      "evidence_refs": [],
+      "notes": null
+    }
+  ],
+  "operating_layer_observation": {
+    "memory_commit_attempt_count": 0,
+    "observed_exact_record_names": [],
+    "observed_exact_sentinels": [],
+    "assistant_claimed_exact_persistence_without_direct_evidence": null,
+    "missing_names": null,
+    "status_emitted": null,
+    "evidence_refs": [],
+    "notes": null
+  },
+  "test_results": [
+    {"test_id": "LH-01", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-02", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-03", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-04", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-05", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-06", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-07", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-08", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-09", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-10", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-11", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-12", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-13", "status": "not_run", "evidence_refs": [], "notes": null},
+    {"test_id": "LH-14", "status": "not_run", "evidence_refs": [], "notes": null}
+  ],
+  "side_effects": {
+    "attempted": [],
+    "completed": [],
+    "not_completed": [],
+    "unexpected": []
+  },
+  "rollback": {
+    "required": null,
+    "attempted": false,
+    "completed": false,
+    "v3_2_system_payloads_restored": null,
+    "v3_2_memory_state_restored": null,
+    "residual_rc2_records_observed": null,
+    "evidence_refs": [],
+    "notes": null
+  },
+  "operator_conclusion": {
+    "derived_runtime_status": null,
+    "qa_disposition": null,
+    "open_failures": [],
+    "limitations": []
+  }
+}

@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> **Helikon-mini 3.3.0 RC2 is available for review.**
+> The current candidate is in [`release/v3.3.0/`](release/v3.3.0/Helikon-mini_README_v3.3.0.md). It is a publicly merged source candidate with static QA complete; it is not a tagged GitHub Release, published binary, or live-host-validated installation. The v3.2 materials below remain preserved as the prior public baseline.
+
 # Mount Helikon-mini 3.2 AIOS
 
 <p align="left">
